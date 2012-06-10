@@ -1,0 +1,4 @@
+11時01分33秒: /Volumes/Poedit/Poedit.app/Contents/MacOS/xgettext: Non-ASCII string at ./tpls/media_tab_content.php:231.
+11時01分33秒:                                                     Please specify the source encoding through --from-code.
+11時01分33秒: カタログ中の項目に不正（未対応？）なものがあるようです。
+11時01分33秒: カタログの更新に失敗しました。詳細を見るには 'More>>' をクリックしてください。

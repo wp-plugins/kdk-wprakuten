@@ -1,0 +1,105 @@
+.rakuten_books_label,.rakuten_item_label {
+	font-size: 24px;
+	font-weight: bold;
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 1.5;
+	padding: 5px;
+	border: 1px solid #AAAAAA;
+}
+
+#result {
+	width: 99%;
+	margin: auto;
+}
+
+#page {
+	margin: 5px;
+}
+
+#page p {
+	font-size: 18px;
+}
+
+#page p {
+	font-size: 18px;
+}
+
+#page ul li {
+	float: left;
+	display: block;
+	margin: 5px;
+	padding: 5px;
+	margin: 2px;
+	padding-top: 25px;
+}
+
+#page ul li.active {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#page ul li.page-number {
+	background-image: url('../images/a2.png');
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+#page ul li:FIRST-CHILD {
+	background-image: url('../images/r2.png');
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+#page ul li:last-child {
+	background-image: url('../images/kuten2.png');
+	width: 74px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#page ul:after {
+	display: block;
+	clear: both;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+	content: ".";
+	font-size: 0.1em;
+}
+
+#itens li {
+	text-align: center;
+	margin-left: 3px;
+	width: 190px;
+	min-height: 250px;
+	float: left;
+	position: relative;
+	border: 1px solid #AAAAAA;
+}
+
+#itens li div.button_container {
+	position: absolute;
+	bottom: 2px;
+	margin: 10%;
+}
+
+#shopping_url_button {
+	padding: 15px 20px;
+	font-size: 28px;
+}
+
+#loading_text {
+	background-image: url('../images/ajax-loader.gif');
+	background-repeat: no-repeat;
+	background-position: top center;
+	padding-top: 16px;
+	display: none;
+}
+
+.kdk_button {
+	width: 95%;
+	margin: auto;
+	text-align: center;
+}
