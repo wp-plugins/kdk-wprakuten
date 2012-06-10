@@ -18,6 +18,7 @@
 
 		function rakuteSearch(param) {
 			if (!is_request) {
+				$('#error').hide();
 				searchParam = param;
 				var $API_BASE_URL = "http://api.rakuten.co.jp/rws/3.0/json";
 				is_request = true;
@@ -57,8 +58,14 @@
 											setBookItens(Item);
 										}
 
+									} else if (data.Header.Status.toLowerCase() == "clienterror")
+									{
+										$('#error').html(data.Header.StatusMsg).show();
+									} else if (data.Header.Status.toLowerCase() == 'notfound') {
+										$('#pager').html('<?php _e('Nao foi encontrado nenhum produto','kdk-wprakuten')?>');
 									}
 								}
+
 							},
 							beforeSend : function() {
 							},
@@ -89,7 +96,6 @@
 				buttonClickCallback : PageClick
 			});
 			var found_msg = "<?php esc_html_e('Encontrados %d produto(s).','kdk-wprakuten')?>".replace(/%d/g,count);
-
 			$('#page p').html(found_msg);
 			$('#itens').empty();
 		}
@@ -178,6 +184,10 @@
 			}
 		});
 
+		$('#shopping_url_button').click(function (){
+			$('#media_rakuten_search_form').submit();
+		});
+
 		$('#operation_table input[type=radio]')
 				.click(
 						function() {
@@ -207,40 +217,64 @@
 	});
 </script>
 <form method="GET" action="#" id="media_rakuten_search_form">
+	<div id="error"></div>
 	<input type="hidden" name="developerId"
 		value="feaeec38b8bc37411b14de274b1d9480" /> <input type="hidden"
 		name="affiliateId" value="0a30aaaf.afb9b1e2.0a30aab0.82880378" />
 	<table id="operation_table">
 		<tr>
-			<td><label class="rakuten_books_label"><input
-					type="radio" name="operation" value="BooksBookSearch"><?php _e('Pesquisar livros','kdk-wprakuten');?></label></td>
-			<td><label class="rakuten_item_label"><input
-					type="radio" name="operation" value="ItemSearch"><?php _e('Pesquisar itens','kdk-wprakuten');?></label></td>
+			<td><label class="rakuten_books_label"><input type="radio"
+					name="operation" value="BooksBookSearch"> <?php _e('Pesquisar livros','kdk-wprakuten');?>
+			</label></td>
+			<td><label class="rakuten_item_label"><input type="radio"
+					name="operation" value="ItemSearch"> <?php _e('Pesquisar itens','kdk-wprakuten');?>
+			</label></td>
 		</tr>
 	</table>
 
 	<table id="media_rakuten_itemsearch">
 		<tr>
 			<td><?php _e('Palavra chave','kdk-wprakuten')?></td>
-			<td>
-				<input type="hidden" name="version" value="2010-09-15" />
-				<input type="text" name="keyword" />
+			<td><input type="hidden" name="version" value="2010-09-15" /> <input
+				type="text" name="keyword" />
 			</td>
 		</tr>
 		<tr>
 			<td><?php _e('Ordem','kdk-wprakuten');?></td>
 			<td><select name="sort">
-					<option value="+affiliateRate"><?php _e('Taxas de afiliados (ascendente)','kdk-wprakuten');?></option>
-					<option value="-affiliateRate"><?php _e('Taxas de afiliados (decrescente)','kdk-wprakuten');?></option>
-					<option value="+reviewCount"><?php _e('Comentarios (ascendente)','kdk-wprakuten');?></option>
-					<option value="-reviewCount"><?php _e('Comentarios (decrescente)','kdk-wprakuten');?></option>
-					<option value="+reviewAverage"><?php _e('Media de comentarios (ascendente)','kdk-wprakuten');?></option>
-					<option value="-reviewAverage"><?php _e('Media de comentarios (decrescente)','kdk-wprakuten');?></option>
-					<option value="+itemPrice"><?php _e('Preco (ascendente)','kdk-wprakuten');?></option>
-					<option value="-itemPrice"><?php _e('Preco (decrescente)','kdk-wprakuten');?></option>
-					<option value="+updateTimestamp"><?php _e('Data de atualizacao (ascendente)','kdk-wprakuten');?></option>
-					<option value="-updateTimestamp"><?php _e('Data de atualizacao (decrescente)','kdk-wprakuten');?></option>
-					<option value="standard"><?php _e('Padrao do Rakuten','kdk-wprakuten');?></option>
+					<option value="+affiliateRate">
+						<?php _e('Taxas de afiliados (ascendente)','kdk-wprakuten');?>
+					</option>
+					<option value="-affiliateRate">
+						<?php _e('Taxas de afiliados (decrescente)','kdk-wprakuten');?>
+					</option>
+					<option value="+reviewCount">
+						<?php _e('Comentarios (ascendente)','kdk-wprakuten');?>
+					</option>
+					<option value="-reviewCount">
+						<?php _e('Comentarios (decrescente)','kdk-wprakuten');?>
+					</option>
+					<option value="+reviewAverage">
+						<?php _e('Media de comentarios (ascendente)','kdk-wprakuten');?>
+					</option>
+					<option value="-reviewAverage">
+						<?php _e('Media de comentarios (decrescente)','kdk-wprakuten');?>
+					</option>
+					<option value="+itemPrice">
+						<?php _e('Preco (ascendente)','kdk-wprakuten');?>
+					</option>
+					<option value="-itemPrice">
+						<?php _e('Preco (decrescente)','kdk-wprakuten');?>
+					</option>
+					<option value="+updateTimestamp">
+						<?php _e('Data de atualizacao (ascendente)','kdk-wprakuten');?>
+					</option>
+					<option value="-updateTimestamp">
+						<?php _e('Data de atualizacao (decrescente)','kdk-wprakuten');?>
+					</option>
+					<option value="standard">
+						<?php _e('Padrao do Rakuten','kdk-wprakuten');?>
+					</option>
 			</select></td>
 		</tr>
 	</table>
@@ -248,8 +282,8 @@
 	<table id="media_rakuten_booksearch">
 		<tr>
 			<td><?php _e('Nome do livro','kdk-wprakuten');?></td>
-			<td><input type="hidden" name="version" value="2011-12-01" />
-			<input type="text" name="title" /></td>
+			<td><input type="hidden" name="version" value="2011-12-01" /> <input
+				type="text" name="title" /></td>
 			<td><?php _e('Autor','kdk-wprakuten')?></td>
 			<td><input type="text" name="author" /></td>
 		</tr>
@@ -262,21 +296,40 @@
 		<tr>
 			<td><?php _e('Ordem','kdk-wprakuten');?></td>
 			<td colspan="2"><select name="sort">
-					<option value="standard"><?php _e('Padrao','kdk-wprakuten')?></option>
-					<option value="sales"><?php _e('Mais vendido','kdk-wprakuten')?></option>
-					<option value="+releaseDate"><?php _e('Data de lancamento (Antigo)','kdk-wprakuten')?></option>
-					<option value="-releaseDate"><?php _e('Data de lancamento (Novo)','kdk-wprakuten')?></option>
-					<option value="+itemPrice"><?php _e('Mais barato','kdk-wprakuten')?></option>
-					<option value="-itemPrice"><?php _e('Mais caro','kdk-wprakuten')?></option>
-					<option value="reviewCount"><?php _e('Mais comentarios','kdk-wprakuten')?></option>
-					<option value="reviewAverage"><?php _e('Mais comentarios (media)','kdk-wprakuten')?></option>
+					<option value="standard">
+						<?php _e('Padrao','kdk-wprakuten')?>
+					</option>
+					<option value="sales">
+						<?php _e('Mais vendido','kdk-wprakuten')?>
+					</option>
+					<option value="+releaseDate">
+						<?php _e('Data de lancamento (Antigo)','kdk-wprakuten')?>
+					</option>
+					<option value="-releaseDate">
+						<?php _e('Data de lancamento (Novo)','kdk-wprakuten')?>
+					</option>
+					<option value="+itemPrice">
+						<?php _e('Mais barato','kdk-wprakuten')?>
+					</option>
+					<option value="-itemPrice">
+						<?php _e('Mais caro','kdk-wprakuten')?>
+					</option>
+					<option value="reviewCount">
+						<?php _e('Mais comentarios','kdk-wprakuten')?>
+					</option>
+					<option value="reviewAverage">
+						<?php _e('Mais comentarios (media)','kdk-wprakuten')?>
+					</option>
 			</select></td>
 		</tr>
 	</table>
 	<div class="kdk_button">
 		<input type="button" name="shopping_url_button"
-			id="shopping_url_button" value="<?php esc_attr_e('Pesquisar','kdk-wprakuten')?>" />
-		<div id="loading_text"><?php _e('Pesquisando....','kdk-wprakuten')?></div>
+			id="shopping_url_button"
+			value="<?php esc_attr_e('Pesquisar','kdk-wprakuten')?>" />
+		<div id="loading_text">
+			<?php _e('Pesquisando....','kdk-wprakuten')?>
+		</div>
 	</div>
 </form>
 <div id="result">
