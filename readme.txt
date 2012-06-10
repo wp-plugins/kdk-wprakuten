@@ -7,7 +7,7 @@ Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-楽天APIを使って、プラグインを作りました。
+Search Rakuten product and add shortcodes! 
 
 == Description ==
 
@@ -22,7 +22,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Screenshots ==
 
-1. メディア追加の画面 screenshot-1.png.
+1. [メディア追加の画面]
 アップロード/挿入ボタンから、メディア追加ウィンドウの"楽天"タブから開く商品を検索する事が出来ます。
 
 2. 書籍検索や商品検索 screenshot-2.png
