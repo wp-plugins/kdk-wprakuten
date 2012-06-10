@@ -11,6 +11,7 @@ Search Rakuten product and add shortcodes!
 
 == Description ==
 現在はショートコードを利用して、楽天の市場の商品、楽天ブックスを投稿に表示させる事ができます。
+バグがあれば、教えて下さい Twitter : @johna1203
 
 == Screenshots ==
 
