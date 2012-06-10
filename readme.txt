@@ -1,6 +1,6 @@
 === Rakuten product ===
 Contributors: johna1203
-Tags: shortcode, rakuten, kodokuman
+Tags: shortcode, rakuten, kodokuman,楽天
 Requires at least: 3.1
 Tested up to: 3.3.2
 Stable tag: 0.3.1
