@@ -7,11 +7,11 @@ Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Search Rakuten product and add shortcodes! 
+Search Rakuten product and add shortcodes!
 
 == Description ==
 
-楽天APIを使って、プラグインを作りました。
+Search Rakuten product and add shortcodes!
 現在はショートコードを利用して、楽天の市場の商品、楽天ブックスを投稿に表示させる事ができます。
 
 == Installation ==
