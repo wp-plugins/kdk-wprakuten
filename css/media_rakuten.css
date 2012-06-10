@@ -90,6 +90,11 @@
 	font-size: 28px;
 }
 
+#shopping_url_button:HOVER {
+	background-color: #AAAAAA;
+	color: red;
+}
+
 #loading_text {
 	background-image: url('../images/ajax-loader.gif');
 	background-repeat: no-repeat;
@@ -102,4 +107,14 @@
 	width: 95%;
 	margin: auto;
 	text-align: center;
+}
+
+#error {
+	display: none;
+	width: 80%;
+	margin: auto;
+	background-color: #FFD5D5;
+	color: red;
+	background-color: #FFD5D5;
+	padding: 5px;
 }
