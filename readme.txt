@@ -1,4 +1,5 @@
 === Rakuten product ===
+Contributors: johna1203
 Tags: shortcode, rakuten, kodokuman
 Requires at least: 3.1
 Tested up to: 3.3.2
@@ -7,7 +8,6 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 楽天APIを使って、プラグインを作りました。
-現在はショートコードを利用して、楽天の市場の商品、楽天ブックスを投稿に表示させる事ができます。
 
 == Description ==
 
