@@ -1,0 +1,1 @@
+<div class="kdk_rakuten">[+itemcode+]</div>
