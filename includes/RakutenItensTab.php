@@ -8,23 +8,23 @@ class RakutenItensTab implements IRakutenMediaTab {
 	public function getFields() {
 		return array(
 				//デベロッパーID
-				'developerId' => '%%%RAKUTEN%%%DEV_ID%%%',
+				'__developerId' => '%%%RAKUTEN%%%DEV_ID%%%',
 				//アフィリエイトID
-				'affiliateId' => '%%%RAKUTEN%%%AFF_ID%%%',
+				'__affiliateId' => '%%%RAKUTEN%%%AFF_ID%%%',
 				//操作
-				'operation' => 'ItemSearch',
+				'__operation' => 'ItemSearch',
 				//検索キーワード
 				'keyword' => null,
 				//バージョン
-				'version' => '2010-09-15',
+				'__version' => '2010-09-15',
 				//ショップコード
-				'shopCode' => null,
+				'_shopCode' => null,
 				//ジャンルID
-				'genreId' => null,
+				'__genreId' => null,
 				//1ページあたりの取得件数
-				'hits' => 30,
+				'__hits' => 30,
 				//取得ページ
-				'page' => 1,
+				'__page' => 1,
 				//ソート
 				'sort' => array(
 						'+affiliateRate',
@@ -39,29 +39,29 @@ class RakutenItensTab implements IRakutenMediaTab {
 						'-updateTimestamp',
 						'standard'
 				),
-				'minPrice' => 0,
-				'maxPrice' => null,
-				'availability' => array(0,1),
-				'field' => array(0,1),
-				'carrier' => array(0,1),
-				'imageFlag' => array(0,1),
-				'orFlag' => array(0,1),
-				'NGKeyword' => null,
-				'genreInformationFlag' => array(0,1),
-				'purchaseType' => array(0,1,2),
-				'shipOverseasFlag' => array(0,1),
-				'shipOverseasArea' => null,
-				'asurakuFlag' => array(0,1),
-				'asurakuArea' => null,
-				'pointRateFlag' => array(0,1),
-				'pointRate' => array(2,3,4,5,6,7,8,9,10),
-				'postageFlag' => array(0,1),
-				'creditCardFlag' => array(0,1)
+				'__minPrice' => 0,
+				'__maxPrice' => null,
+				'__availability' => array(0,1),
+				'__field' => array(0,1),
+				'__carrier' => array(0,1),
+				'__imageFlag' => array(0,1),
+				'__orFlag' => array(0,1),
+				'__NGKeyword' => null,
+				'__genreInformationFlag' => array(0,1),
+				'__purchaseType' => array(0,1,2),
+				'__shipOverseasFlag' => array(0,1),
+				'__shipOverseasArea' => null,
+				'__asurakuFlag' => array(0,1),
+				'__asurakuArea' => null,
+				'__pointRateFlag' => array(0,1),
+				'__pointRate' => array('',2,3,4,5,6,7,8,9,10),
+				'__postageFlag' => array(0,1),
+				'__creditCardFlag' => array(0,1)
 		);
 	}
 
-	public function content() {
-		include_once dirname(dirname(__FILE__)) . "/tpls/rakuten_item_search.php";
+	public function displayFields() {
+		return array();
 	}
 
 

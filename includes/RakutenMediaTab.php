@@ -4,6 +4,9 @@
 */
 class RakutenMediaTab {
 
+	const REPLACE_DEVID = "%%%RAKUTEN%%%DEV_ID%%%";
+	const REPLACE_AFLID = "%%%RAKUTEN%%%AFF_ID%%%";
+
 	private static $singleton = null;
 
 	private $tabInterfaces = array();
@@ -53,9 +56,9 @@ class RakutenMediaTab {
 	//タブのアクションを実装
 	function do_action ($type = "default")
 	{
-		foreach ($this->tabInterfaces as $tabs) {
-			if ($tabs == $type) {
-				$this->kdk_iframe(array(&$tabs,'content'));
+		foreach ($this->tabInterfaces as $tab) {
+			if ($tab == $type) {
+				$this->kdk_iframe(&$tab);
 			}
 		}
 	}
@@ -79,7 +82,7 @@ class RakutenMediaTab {
 	}
 
 	//iframeの実装
-	public function kdk_iframe($content_func /* ... */) {
+	public function kdk_iframe($tab) {
 		?>
 <!DOCTYPE html>
 <!--[if IE 8]>
@@ -97,13 +100,31 @@ class RakutenMediaTab {
 </head>
 <body id="media-upload" class="no-js">
 
+
 	<?php
 	$this->media_rakuten_header();
-	$args = func_get_args();
-	$args = array_slice($args, 1);
-	call_user_func_array($content_func, $args);
+	$fields = $tab->getFields();
+
+	$defaults = array(
+			'RakutenAffiliateId' => KDK_DEFAULT_AID,
+	);
+
+	$options = get_option( 'rakuten_product_options', $defaults);
+	//replace
+	foreach ($fields as $i => $v) {
+		if (!is_array($v)) {
+			$fields[$i] = str_replace(RakutenMediaTab::REPLACE_AFLID, $options['RakutenAffiliateId'], $fields[$i]);
+			$fields[$i] = str_replace(RakutenMediaTab::REPLACE_DEVID, KDK_DEFAULT_DID, $fields[$i]);
+		}
+	}
+
+	include_once dirname(dirname(__FILE__)) . "/tpls/tab_template.php";
+	// 	$args = func_get_args();
+	// 	$args = array_slice($args, 1);
+	// 	call_user_func_array($content_func, $args);
 	//do_action('admin_print_footer_scripts');
 	?>
+
 </body>
 </html>
 <?php

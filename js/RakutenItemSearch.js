@@ -19,7 +19,7 @@
 		// var new_param = {};
 		if (fp.length > 0) {
 			for (i in fp) {
-				console.log("param name : " + fp[i].name + "val"
+				console.log("param name   :   " + fp[i].name + "   val   : "
 						+ param[fp[i].name]);
 				if (param[fp[i].name] !== undefined) {
 					// if (fp[i].value !== "") {
@@ -36,7 +36,7 @@
 			}
 		}
 		// param = $.extend({}, param, new_param);
-		console.log(JSON.stringify(param, null, '\t'));
+		console.log("request" + JSON.stringify(param, null, '\t'));
 		_do_request(param, opts);
 	}
 
@@ -48,7 +48,7 @@
 			jsonp : 'callBack',
 			success : function(data, status) {
 				if (status == "success") {
-					if (checkHeader(data)) {
+					if (checkHeader(data) === true) {
 						if (opts.callBack) {
 							console.log("callback");
 							opts.callBack(data, param, opts);

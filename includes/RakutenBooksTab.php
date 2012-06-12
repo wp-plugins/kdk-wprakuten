@@ -8,11 +8,40 @@ class RakutenBooksTab implements IRakutenMediaTab {
 
 	public function getFields()
 	{
-		return array();
+		return array(
+				'__developerId' => '%%%RAKUTEN%%%DEV_ID%%%',
+				'__affiliateId' => '%%%RAKUTEN%%%AFF_ID%%%',
+				'__operation' => 'BooksBookSearch',
+				'__version' => '2011-12-01',
+				'__hits'=> 30,
+				'__page' => 1,
+				'__availability' => array(0,1),
+				'outOfStockFlag' => array(1,0),
+				'chirayomiFlag' => array(0,1),
+				'sort'=>array(
+						'standard',
+						'sales',
+						'+releaseDate',
+						'-releaseDate',
+						'+itemPrice',
+						'-itemPrice',
+						'reviewCount',
+						'reviewAverage'
+				),
+				'limitedFlag' => array(0,1),
+				'__carrier' => array(0,1),
+				'__genreInformationFlag' => 0,
+				'title'=>'',
+				'author'=>'',
+				'publisherName'=>'',
+				'size'=> array(0,1,2,3,4,5,6,7,8,9,10),
+				'isbn' => '',
+				'booksGenreId' => ''
+		);
 	}
 
-	public function content() {
-		include_once dirname(dirname(__FILE__)) . "/tpls/rakuten_books_search.php";
+	public function displayFields() {
+		return array();
 	}
 
 	public function shortCodeNames() {
