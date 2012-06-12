@@ -11,8 +11,8 @@ class RakutenShortTag {
 	static function get_tag ($raw_args, $content=null) {
 
 		$defaults = array (
-			'itemcode' => '',
-			'isbn' => ''
+				'itemcode' => '',
+				'isbn' => ''
 		);
 
 		$spanitized_args = shortcode_atts($defaults, $raw_args); //コードの属性を取得
@@ -26,8 +26,14 @@ class RakutenShortTag {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script(__CLASS__);
 
-		$param['developerId'] = "feaeec38b8bc37411b14de274b1d9480";
-		$param['affiliateId'] = "0a30aaaf.afb9b1e2.0a30aab0.82880378";
+		$defaults = array(
+				'RakutenAffiliateId' => KDK_DEFAULT_AID,
+		);
+		// get option 'text_string' value from the database
+		$options = get_option( 'rakuten_product_options', $defaults);
+
+		$param['developerId'] = KDK_DEFAULT_DID;
+		$param['affiliateId'] = $options['RakutenAffiliateId'];
 		if(!empty($spanitized_args['itemcode'])) {
 			$param['operation'] = "ItemCodeSearch";
 			$param['version'] = "2010-08-05";

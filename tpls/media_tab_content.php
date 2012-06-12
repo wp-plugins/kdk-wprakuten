@@ -219,8 +219,9 @@
 <form method="GET" action="#" id="media_rakuten_search_form">
 	<div id="error"></div>
 	<input type="hidden" name="developerId"
-		value="feaeec38b8bc37411b14de274b1d9480" /> <input type="hidden"
-		name="affiliateId" value="0a30aaaf.afb9b1e2.0a30aab0.82880378" />
+		value="<?php echo KDK_DEFAULT_DID?>" /> <input type="hidden"
+		name="affiliateId"
+		value="<?php echo esc_attr($options['RakutenAffiliateId'])?>" />
 	<table id="operation_table">
 		<tr>
 			<td><label class="rakuten_books_label"><input type="radio"

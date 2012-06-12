@@ -1,7 +1,5 @@
 jQuery.fn.kdk_rakuten = function (param){
 	return this.each(function (){
-		var $DEVELOPER_ID = "feaeec38b8bc37411b14de274b1d9480";
-		var $AFFILIATE_ID = "0a30aaaf.afb9b1e2.0a30aab0.82880378";
 		var $API_BASE_URL = "http://api.rakuten.co.jp/rws/3.0/json";
 
 		var self = this;

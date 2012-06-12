@@ -39,6 +39,10 @@ class MediaRakutenSearch {
 	static public function media_rakuten_search_form ($type = null, $errors = null, $id = null) {
 
 		media_upload_header();
+		$defaults = array(
+				'RakutenAffiliateId' => KDK_DEFAULT_AID,
+		);
+		$options = get_option( 'rakuten_product_options', $defaults);
 		require_once dirname(dirname(__FILE__)) . '/tpls/media_tab_content.php';
 	}
 }
