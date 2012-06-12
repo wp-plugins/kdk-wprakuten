@@ -104,6 +104,7 @@ class RakutenMediaTab {
 	<?php
 	$this->media_rakuten_header();
 	$fields = $tab->getFields();
+	$display_fields = $tab->displayFields();
 
 	$defaults = array(
 			'RakutenAffiliateId' => KDK_DEFAULT_AID,
@@ -220,6 +221,27 @@ class RakutenMediaTab {
 
 		$data['itemcode'] = json_encode($param);
 		return '<div class="kdk_rakuten" style="display:none;">' . json_encode($param) . '</div>';
+	}
 
+	//スタティックメソット
+	function pser_field ($fields, $json_obj=null)
+	{
+		$tmp = explode(',',$fields);
+		if (count($tmp) > 1) {
+			$ret = "";
+			foreach ($tmp as $k => $v) {
+				if ($k == 0) {
+					$ret .= "{$json_obj}.{$v} ";
+				} else {
+					$ret .= " '<small>' + {$json_obj}.{$v} + '</smal>'";
+				}
+
+				if ((count($tmp) -1) > $k)
+					$ret .= "+' <br /> '+";
+			}
+			return $ret;
+		} else {
+			return "{$json_obj}.{$fields}";
+		}
 	}
 }

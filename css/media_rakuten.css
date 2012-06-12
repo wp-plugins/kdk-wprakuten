@@ -73,10 +73,36 @@
 	text-align: center;
 	margin-left: 3px;
 	width: 190px;
-	min-height: 250px;
+	height: 300px;
 	float: left;
 	position: relative;
 	border: 1px solid #AAAAAA;
+}
+
+#itens li.list1 {
+	background-color: #E8F0F3;
+}
+
+#itens li img {
+	display: block;
+	margin: auto;
+	height: 128px;
+}
+
+#itens li p.title {
+	line-height: 1.3;
+	height: 70px;
+	margin-top: 5px;
+	overflow: auto;
+}
+
+#itens li p.price {
+	line-height: 1.5;
+	text-align: right;
+	background-color: #90BC5A;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
 }
 
 #itens li div.button_container {

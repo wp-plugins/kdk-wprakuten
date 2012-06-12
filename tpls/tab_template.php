@@ -1,5 +1,7 @@
 <form method="GET" action="#" id="itemSearchForm">
-	<h3><?php echo $tab->getName()?></h3>
+	<h3>
+		<?php echo $tab->getName()?>
+	</h3>
 	<table>
 		<tr>
 			<?php
@@ -20,35 +22,31 @@
 				continue;
 			}
 			?>
-			<td>
-				<label for="label_<?php echo esc_attr($k)?>"><?php esc_html_e($k)?></label>
-			</td>
+			<td><label for="label_<?php echo esc_attr($k)?>"><?php esc_html_e($k)?>
+			</label></td>
 
 			<?php if (!is_array($value)) :?>
 
-			<td>
-				<input id="label_<?php echo esc_attr($k)?>" type="text" name="<?php echo ereg_replace('^_+', "",esc_attr($k))?>" value="<?php echo esc_attr($value) ?>" />
-			</td>
+			<td><input id="label_<?php echo esc_attr($k)?>" type="text"
+				name="<?php echo ereg_replace('^_+', "",esc_attr($k))?>"
+				value="<?php echo esc_attr($value) ?>" /></td>
 
 			<?php else :?>
 
-			<td>
-				<?php if (count($value) > 2) :?>
-				<select id="label_<?php echo esc_attr($k)?>" name="<?php echo esc_attr($k) ?>">
-						<?php foreach ($value as $option) :?>
-						<option value="<?php echo esc_attr($option)?>">
+			<td><?php if (count($value) > 2) :?> <select
+				id="label_<?php echo esc_attr($k)?>"
+				name="<?php echo esc_attr($k) ?>">
+					<?php foreach ($value as $option) :?>
+					<option value="<?php echo esc_attr($option)?>">
 
 						<?php esc_html_e($option)?>
 
-						</option>
-						<?php endforeach;?>
-				</select>
-				<?php else :?>
-					<?php foreach ($value as $option) :?>
-						<label><?php esc_html_e($option)?> <input type="radio" name="<?php echo esc_attr($k)?>" value="<?php echo esc_attr($option)?>" /></label>
+					</option>
 					<?php endforeach;?>
-				<?php endif;?>
-			</td>
+			</select> <?php else :?> <?php foreach ($value as $option) :?> <label><?php esc_html_e($option)?>
+					<input type="radio" name="<?php echo esc_attr($k)?>"
+					value="<?php echo esc_attr($option)?>" /> </label> <?php endforeach;?>
+				<?php endif;?></td>
 			<?php endif?>
 
 			<?php if ($lines % 2 == 0) :?>
@@ -90,8 +88,19 @@ jQuery(function ($) {
 		ul.innerHTML = '';
 		var itens = data.Body.<?php echo $fields['__operation']?>.Items.Item;
 		$.each(itens, function(i, item) {
-			 var li = "<li>";
-			 li += "<img src='" + item.mediumImageUrl + "' />";
+			if (i % 2 == 0)
+				var li = "<li class='list1'>";
+			else
+				var li = "<li class='list2'>";
+
+			 li += "<img src='" + item.<?php echo $display_fields['imageUrl']?> + "' />";
+
+			 li += "<p class='title'>"+<?php echo RakutenMediaTab::pser_field( $display_fields['title'] , 'item') ?>+"</p>";
+
+			 li += "<p class='price'>&yen;"+<?php echo RakutenMediaTab::pser_field( $display_fields['price'] , 'item') ?>+"</p>";
+
+			 li += "<button value='<?php esc_attr_e("Add code")?>'><?php esc_attr_e("Add code")?></button>";
+
 			 li += "</li>";
 			 ul.innerHTML += li;
 		});

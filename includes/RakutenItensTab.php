@@ -61,7 +61,44 @@ class RakutenItensTab implements IRakutenMediaTab {
 	}
 
 	public function displayFields() {
-		return array();
+		return array(
+				'id'    => 'itemCode',
+				'catchcopy' => 'catchcopy',
+				'description'=>'itemCaption',
+				'shopName' => 'shopName',
+				'shopCode' => 'shopCode',
+				'shopUrl' => 'shopUrl',
+				'imageFlag'  => 'imageFlag',
+				'imageUrl' => 'mediumImageUrl',
+				'thumbUrl' => 'smallImageUrl',
+				'title' => 'itemName',
+				'price' => 'itemPrice',
+				'salePrice' => '',
+				'affiliateUrl' => 'affiliateUrl',
+				'url' => 'itemUrl',
+				'affiliateRate' => 'affiliateRate',
+				'reviewCount' => 'reviewCount',
+				'reviewAverage' => 'reviewAverage',
+				'other' => array(
+						'availability',
+						'taxFlag',
+						'postageFlag',
+						'creditCardFlag',
+						'shopOfTheYearFlag',
+						'shipOverseasFlag',
+						'shipOverseasArea',
+						'asurakuFlag',
+						'asurakuArea',
+						'affiliateRate',
+						'startTime',
+						'endTime',
+						'pointRate',
+						'pointRateStartTime',
+						'pointRateEndTime',
+						'genreId'
+
+				)
+		);
 	}
 
 

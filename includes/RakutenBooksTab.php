@@ -41,7 +41,33 @@ class RakutenBooksTab implements IRakutenMediaTab {
 	}
 
 	public function displayFields() {
-		return array();
+		return array(
+				'id'    => 'isbn',
+				'catchcopy' => 'contents',
+				'description'=>'itemCaption',
+				'shopName' => 'publisherName,author',
+				'shopCode' => 'shopCode',
+				'shopUrl' => 'shopUrl',
+				'imageFlag'  => 'imageFlag',
+				'imageUrl' => 'mediumImageUrl',
+				'thumbUrl' => 'smallImageUrl',
+				'title' => 'title,subTitle',
+				'price' => 'itemPrice',
+				'salePrice' => 'listPrice',
+				'affiliateUrl' => 'affiliateUrl',
+				'url' => 'itemUrl',
+				'affiliateRate' => 'affiliateRate',
+				'reviewCount' => 'reviewCount',
+				'reviewAverage' => 'reviewAverage',
+				'other' => array(
+						'availability',
+						'chirayomiUrl',
+						'postageFlag',
+						'limitedFlag',
+						'booksGenreId'
+
+				)
+		);
 	}
 
 	public function shortCodeNames() {
