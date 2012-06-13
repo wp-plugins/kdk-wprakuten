@@ -105,10 +105,12 @@ class RakutenMediaTab {
 	$this->media_rakuten_header();
 	$fields = $tab->getFields();
 	$display_fields = $tab->displayFields();
-
+	//code
+	$code    = $tab->shortCodeName();
 	$defaults = array(
 			'RakutenAffiliateId' => KDK_DEFAULT_AID,
 	);
+
 
 	$options = get_option( 'rakuten_product_options', $defaults);
 	//replace
@@ -180,10 +182,10 @@ class RakutenMediaTab {
 			//add_action("media_rakuten_tabs_action", $interface);
 
 			//ショートコード登録
-			$codes = $interface->shortCodeNames();
-			foreach ($codes as $value) {
-				add_shortcode($value, array(&$interface,'doShortcode'));
-				add_action('rakuten_media_{$interface}', array(&$interface,'doShortcode'));
+			$code = $interface->shortCodeName();
+			if (!empty($code)) {
+				add_shortcode($code, array(&$interface,'doShortcode'));
+				add_action('rakuten_media_{$code}', array(&$interface,'doShortcode'));
 			}
 		}
 	}

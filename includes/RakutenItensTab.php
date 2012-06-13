@@ -102,13 +102,13 @@ class RakutenItensTab implements IRakutenMediaTab {
 	}
 
 
-	public function shortCodeNames() {
-		return array('rakute_item');
+	public function shortCodeName() {
+		return 'rakute_item';
 	}
 
 	public function doShortcode($raw_args, $content=null)
 	{
-
+		print_r($raw_args);
 	}
 
 	public function __toString()

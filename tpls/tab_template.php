@@ -23,15 +23,13 @@
 			}
 			?>
 			<td><label for="label_<?php echo esc_attr($k)?>"><?php esc_html_e($k)?>
-			</label>
-			</td>
+			</label></td>
 
 			<?php if (!is_array($value)) :?>
 
 			<td><input id="label_<?php echo esc_attr($k)?>" type="text"
 				name="<?php echo ereg_replace('^_+', "",esc_attr($k))?>"
-				value="<?php echo esc_attr($value) ?>" />
-			</td>
+				value="<?php echo esc_attr($value) ?>" /></td>
 
 			<?php else :?>
 
@@ -48,8 +46,7 @@
 			</select> <?php else :?> <?php foreach ($value as $option) :?> <label><?php esc_html_e($option)?>
 					<input type="radio" name="<?php echo esc_attr($k)?>"
 					value="<?php echo esc_attr($option)?>" /> </label> <?php endforeach;?>
-				<?php endif;?>
-			</td>
+				<?php endif;?></td>
 			<?php endif?>
 
 			<?php if ($lines % 2 == 0) :?>
@@ -107,7 +104,9 @@ jQuery(function ($) {
 			var $button_div = $(document.createElement('div')).addClass("button_container").appendTo($li);
 			var $add_button = $(document.createElement('button')).click(
 					function () {
-						alert(<?php echo RakutenMediaTab::pser_field( $display_fields['title'] , 'item') ?>);
+						var short_code = '[<?php echo $code?> id="'+item.<?php echo $display_fields['id']?>+'"]';
+						var win = window.dialogArguments || opener || parent || top;
+						win.send_to_editor(short_code);
 					}
 				).appendTo($button_div).text("Add code");
 		});

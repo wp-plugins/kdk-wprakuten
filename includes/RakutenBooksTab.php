@@ -70,13 +70,13 @@ class RakutenBooksTab implements IRakutenMediaTab {
 		);
 	}
 
-	public function shortCodeNames() {
-		return array('rakuten_book');
+	public function shortCodeName() {
+		return 'rakuten_book';
 	}
 
 	public function doShortcode($raw_args, $content=null)
 	{
-
+		print_r($raw_args);
 	}
 
 	public function __toString()
