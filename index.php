@@ -21,6 +21,10 @@ define ('KDK_WP_RAKUTEN_NAME','kdk-wprakuten');
 define ('KDK_DEFAULT_AID', '0a30aaaf.afb9b1e2.0a30aab0.82880378');
 define ('KDK_DEFAULT_DID', 'feaeec38b8bc37411b14de274b1d9480');
 
+//script cssの登録
+$css =  plugins_url(KDK_WP_RAKUTEN_NAME . "/css");
+wp_register_style( 'rakuten_product_template', "{$css}/rakuten_product_template.css" );
+
 //languages
 //echo $base_name = basename(plugin_dir_path(__FILE__));
 $res = load_plugin_textdomain( 'kdk-wprakuten', false, "kdk-wprakuten/languages/" );

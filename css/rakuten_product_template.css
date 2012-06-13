@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+
+div.rakuten_product_main {
+	display: none;
+}
+
+div.rakuten_product_main dl.rakuten_template1 {
+	width: 470px;
+	margin: 0 0 15px 0;
+	background-repeat: no-repeat;
+	background-position: 180px 10px;
+	background-image:
+		url(../images/rakuten_product_template1_background.gif);
+	background-color: #F9F9F9;
+	padding: 0px 6px;
+}
+
+div.rakuten_product_main dl.rakuten_template1 dt img.rakuten_photo {
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 5px;
+	background-image: url(../images/rakuten_product_template1_bg.gif);
+	background-repeat: repeat;
+	background-position: left top;
+}
+
+div.rakuten_product_main dl.rakuten_template1 dt a:hover img.rakuten_photo {
+	background-image: url(../images/rakuten_product_template1_bg_hover.gif);
+}
+
+div.rakuten_product_main dl.rakuten_template1 dt p.title {
+	margin: 0 0 5px 0;
+}
+
+div.rakuten_product_main dl.rakuten_template1 dd.rakuten_description {
+	margin: 0 0 0 170px;
+	font-size: 82%;
+	line-height: 1.2;
+	height: 90px;
+	overflow: auto;
+}
+
+div.rakuten_product_main dl.rakuten_template1 dd.rakuten_price {
+	text-align: right;
+	font-size: 120%;
+	line-height: 1.2;
+	margin: 2px;
+	font-weight: bold;
+}
+
+div.rakuten_product_main dl.rakuten_template1 dd.rakuten_dev_link {
+	text-align: right;
+	font-size: 65%;
+	line-height: 1.2;
+	margin: 2px;
+}
+
+dl.rakuten_template1:after {
+	display: block;
+	clear: both;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+	content: ".";
+	font-size: 0.1em;
+}
