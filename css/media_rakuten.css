@@ -91,7 +91,7 @@
 
 #itens li p.title {
 	line-height: 1.3;
-	height: 70px;
+	height: 50px;
 	margin-top: 5px;
 	overflow: auto;
 }
@@ -108,7 +108,14 @@
 #itens li div.button_container {
 	position: absolute;
 	bottom: 2px;
-	margin: 10%;
+}
+
+#itens li div.button_container:FIRST-CHILD {
+	left: 2px;
+}
+
+#itens li div.button_container:last-child {
+	right: 2px;
 }
 
 #shopping_url_button {

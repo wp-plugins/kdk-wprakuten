@@ -23,13 +23,15 @@
 			}
 			?>
 			<td><label for="label_<?php echo esc_attr($k)?>"><?php esc_html_e($k)?>
-			</label></td>
+			</label>
+			</td>
 
 			<?php if (!is_array($value)) :?>
 
 			<td><input id="label_<?php echo esc_attr($k)?>" type="text"
 				name="<?php echo ereg_replace('^_+', "",esc_attr($k))?>"
-				value="<?php echo esc_attr($value) ?>" /></td>
+				value="<?php echo esc_attr($value) ?>" />
+			</td>
 
 			<?php else :?>
 
@@ -46,7 +48,8 @@
 			</select> <?php else :?> <?php foreach ($value as $option) :?> <label><?php esc_html_e($option)?>
 					<input type="radio" name="<?php echo esc_attr($k)?>"
 					value="<?php echo esc_attr($option)?>" /> </label> <?php endforeach;?>
-				<?php endif;?></td>
+				<?php endif;?>
+			</td>
 			<?php endif?>
 
 			<?php if ($lines % 2 == 0) :?>
@@ -76,6 +79,8 @@
 </ul>
 <script type="text/javascript">
 jQuery(function ($) {
+
+
 	var callback = function(data,requestParam,opts) {
 		$.itemSearch.setPager(
 			data.Body.<?php echo $fields['__operation']?>.count,
@@ -84,25 +89,27 @@ jQuery(function ($) {
 			requestParam,
 			opts
 		);
-		var ul = document.getElementById("itens");
-		ul.innerHTML = '';
+
+		var $ul = $(document.getElementById("itens")).empty();
 		var itens = data.Body.<?php echo $fields['__operation']?>.Items.Item;
+
 		$.each(itens, function(i, item) {
+			var $li = $(document.createElement('li')).appendTo($ul);
 			if (i % 2 == 0)
-				var li = "<li class='list1'>";
+				$li.addClass("list1");
 			else
-				var li = "<li class='list2'>";
+				$li.addClass("list2");
 
-			 li += "<img src='" + item.<?php echo $display_fields['imageUrl']?> + "' />";
-
-			 li += "<p class='title'>"+<?php echo RakutenMediaTab::pser_field( $display_fields['title'] , 'item') ?>+"</p>";
-
-			 li += "<p class='price'>&yen;"+<?php echo RakutenMediaTab::pser_field( $display_fields['price'] , 'item') ?>+"</p>";
-
-			 li += "<button value='<?php esc_attr_e("Add code")?>'><?php esc_attr_e("Add code")?></button>";
-
-			 li += "</li>";
-			 ul.innerHTML += li;
+			var $img = $(document.createElement('img')).attr('src',item.<?php echo $display_fields['imageUrl']?>).appendTo($li);
+			var $p_code = $(document.createElement('p')).addClass("code").text(item.<?php echo $display_fields['id']?>).appendTo($li);
+			var $p_title = $(document.createElement('p')).addClass("title").appendTo($li)[0].innerHTML = <?php echo RakutenMediaTab::pser_field( $display_fields['title'] , 'item') ?>;
+			var $p_price = $(document.createElement('p')).addClass("code").appendTo($li)[0].innerHTML  = "&yen;" + item.<?php echo $display_fields['price']?>;
+			var $button_div = $(document.createElement('div')).addClass("button_container").appendTo($li);
+			var $add_button = $(document.createElement('button')).click(
+					function () {
+						alert(<?php echo RakutenMediaTab::pser_field( $display_fields['title'] , 'item') ?>);
+					}
+				).appendTo($button_div).text("Add code");
 		});
 	}
 
