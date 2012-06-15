@@ -3,7 +3,7 @@ Contributors: johna1203
 Tags: shortcode, rakuten, kodokuman,楽天,アフィリエイト,affiliate
 Requires at least: 3.1
 Tested up to: 3.4
-Stable tag: 0.4.2.3
+Stable tag: 0.4.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,10 @@ AJAXを利用して、楽天にリクエストしているからプラグイン�
 ショートコード付きで、記事を公開すると楽天の商品や本の画像が表示されます。
 
 == Changelog ==
+
+= 0.4.2.4 =
+*　商品を検索した際に、件数などを表示
+* 古いバージョンのショートコードに対応させました。
 
 = 0.4.2.3 =
 * IE8に対応させました。

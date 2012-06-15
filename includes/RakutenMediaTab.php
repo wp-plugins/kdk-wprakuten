@@ -188,7 +188,7 @@ class RakutenMediaTab {
 			$code = $interface->shortCodeName();
 			if (!empty($code)) {
 				add_shortcode($code, array(&$interface,'doShortcode'));
-				add_action('rakuten_media_{$code}', array(&$interface,'doShortcode'));
+				add_filter("rakuten_media_{$code}", array(&$interface,'doShortcode'));
 			}
 		}
 	}
@@ -205,27 +205,17 @@ class RakutenMediaTab {
 			return '';
 		}
 
-
-		$defaults = array(
-				'RakutenAffiliateId' => KDK_DEFAULT_AID,
-		);
-		$options = get_option( 'rakuten_product_options', $defaults);
-
-
-		$param['developerId'] = KDK_DEFAULT_DID;
-		$param['affiliateId'] = $options['RakutenAffiliateId'];
-		if(!empty($spanitized_args['itemcode'])) {
-			$param['operation'] = "ItemCodeSearch";
-			$param['version'] = "2010-08-05";
-			$param['itemCode'] = $spanitized_args['itemcode'];
-		} else {
-			$param['operation'] = "BooksBookSearch";
-			$param['version'] = "2011-12-01";
-			$param['isbn'] = $spanitized_args['isbn'];
+		$response = "";
+		if (!empty($spanitized_args['itemcode'])) {
+			$res['id'] = $spanitized_args['itemcode'];
+			$response = apply_filters('rakuten_media_rakute_item',$res);
 		}
 
-		$data['itemcode'] = json_encode($param);
-		return '<div class="kdk_rakuten" style="display:none;">' . json_encode($param) . '</div>';
+		if (!empty($spanitized_args['isbn'])) {
+			$res['id'] = $spanitized_args['isbn'];
+			$response = apply_filters('rakuten_media_rakuten_book',$res);
+		}
+		return $response;
 	}
 
 	//テンプレートの取得

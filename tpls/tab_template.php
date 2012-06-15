@@ -1,7 +1,9 @@
+
 <form method="GET" action="#" id="itemSearchForm">
 	<h3>
 		<?php esc_html_e($tab->getName(),'kdk-wprakuten')?>
 	</h3>
+	<div id="message" class="error"></div>
 	<table style="width: 100%">
 		<tr>
 			<?php
@@ -47,8 +49,7 @@
 					<?php endforeach;?>
 			</select> <?php else :?> <?php foreach ($value as $option) :?> <label>
 					<input type="radio" name="<?php echo esc_attr($k)?>"
-					value="<?php echo esc_attr($option)?>" />
-				<?php esc_html_e($k . '_' . $option,$tab->__toString())?>
+					value="<?php echo esc_attr($option)?>" /> <?php esc_html_e($k . '_' . $option,$tab->__toString())?>
 			</label><br /> <?php endforeach;?> <?php endif;?>
 			</td>
 			<?php endif?>
@@ -67,6 +68,7 @@
 		<input type="submit" name="shopping_url_button"
 			id="shopping_url_button"
 			value="<?php esc_attr_e('Pesquisar','kdk-wprakuten')?>" />
+		<div id="rakuten_loading"><?php _e('Pesquisando....','kdk-wprakuten')?></div>
 		<div id="loading_text">
 			<?php _e('Pesquisando....','kdk-wprakuten')?>
 		</div>
@@ -91,6 +93,8 @@ jQuery(function ($) {
 			opts
 		);
 
+		var found_msg = "<?php esc_html_e('Encontrados %d produto(s).','kdk-wprakuten')?>".replace(/%d/g,data.Body.<?php echo $fields['__operation']?>.count);
+		$('#page p').html(found_msg);
 		var $ul = $(document.getElementById("itens")).empty();
 		var itens = data.Body.<?php echo $fields['__operation']?>.Items.Item;
 

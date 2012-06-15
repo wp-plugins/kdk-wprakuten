@@ -128,7 +128,7 @@
 	color: red;
 }
 
-#loading_text {
+#loading_text,#rakuten_loading {
 	background-image: url('../images/ajax-loader.gif');
 	background-repeat: no-repeat;
 	background-position: top center;
