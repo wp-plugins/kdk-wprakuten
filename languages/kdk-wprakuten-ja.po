@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdk-wprakuten\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-10 12:04-0300\n"
-"PO-Revision-Date: 2012-06-15 23:50+0900\n"
+"POT-Creation-Date: 2012-06-15 14:42-0300\n"
+"PO-Revision-Date: 2012-06-15 14:43-0300\n"
 "Last-Translator: Johnathan David <johnathan@kodokuman.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,143 +13,426 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/MediaRakutenSearch.php:13
-msgid "Rakuten"
-msgstr "楽天"
+#: rakuten-media.php:20
+msgid "You do not have permission to upload files."
+msgstr "あなたには権限がありません"
 
-#: includes/RakutenOptionsSettings.php:17
+#: index.php:30
+msgid "availability_0"
+msgstr ""
+
+#: tests/trans.php:2
+msgid "__developerId"
+msgstr "デベロッパーID"
+
+#: tests/trans.php:3
+msgid "developerId"
+msgstr "デベロッパーID"
+
+#: tests/trans.php:4
+#, fuzzy
+msgid "__affiliateId"
+msgstr "楽天のアフィリエイトID"
+
+#: tests/trans.php:5
+#, fuzzy
+msgid "affiliateId"
+msgstr "楽天のアフィリエイトID"
+
+#: tests/trans.php:6
+msgid "__operation"
+msgstr "操作"
+
+#: tests/trans.php:7
+msgid "operation"
+msgstr "操作"
+
+#: tests/trans.php:8
+msgid "__version"
+msgstr "バージョン"
+
+#: tests/trans.php:9
+msgid "version"
+msgstr "バージョン"
+
+#: tests/trans.php:10
+msgid "__hits"
+msgstr "1ページあたりの取得件数"
+
+#: tests/trans.php:11
+msgid "hits"
+msgstr "1ページあたりの取得件数"
+
+#: tests/trans.php:12
+msgid "__page"
+msgstr "取得ページ"
+
+#: tests/trans.php:13
+msgid "page"
+msgstr "取得ページ"
+
+#: tests/trans.php:14
+msgid "__availability"
+msgstr ""
+
+#: tests/trans.php:15
+msgid "availability"
+msgstr ""
+
+#: tests/trans.php:16
+msgid "outOfStockFlag"
+msgstr ""
+
+#: tests/trans.php:17
+msgid "sort"
+msgstr ""
+
+#: tests/trans.php:18
+msgid "__genreInformationFlag"
+msgstr ""
+
+#: tests/trans.php:19
+msgid "genreInformationFlag"
+msgstr ""
+
+#: tests/trans.php:20
+msgid "limitedFlag"
+msgstr ""
+
+#: tests/trans.php:21
+msgid "carrier"
+msgstr ""
+
+#: tests/trans.php:22
+msgid "__carrier"
+msgstr ""
+
+#: tests/trans.php:23
+msgid "standard"
+msgstr ""
+
+#: tests/trans.php:24
+msgid "sales"
+msgstr ""
+
+#: tests/trans.php:25
+msgid "+releaseDate"
+msgstr ""
+
+#: tests/trans.php:26
+msgid "-releaseDate"
+msgstr ""
+
+#: tests/trans.php:27
+msgid "+itemPrice"
+msgstr ""
+
+#: tests/trans.php:28
+msgid "-itemPrice"
+msgstr ""
+
+#: tests/trans.php:29
+#: tests/trans.php:46
+msgid "reviewCount"
+msgstr ""
+
+#: tests/trans.php:30
+#: tests/trans.php:47
+msgid "reviewAverage"
+msgstr ""
+
+#: tests/trans.php:31
+msgid "id"
+msgstr ""
+
+#: tests/trans.php:32
+msgid "catchcopy"
+msgstr ""
+
+#: tests/trans.php:33
+msgid "description"
+msgstr ""
+
+#: tests/trans.php:34
+msgid "shopName"
+msgstr ""
+
+#: tests/trans.php:35
+msgid "shopCode"
+msgstr ""
+
+#: tests/trans.php:36
+msgid "shopUrl"
+msgstr ""
+
+#: tests/trans.php:37
+msgid "imageFlag"
+msgstr ""
+
+#: tests/trans.php:38
+msgid "imageUrl"
+msgstr ""
+
+#: tests/trans.php:39
+msgid "thumbUrl"
+msgstr ""
+
+#: tests/trans.php:40
+msgid "title"
+msgstr ""
+
+#: tests/trans.php:41
+msgid "price"
+msgstr ""
+
+#: tests/trans.php:42
+msgid "salePrice"
+msgstr ""
+
+#: tests/trans.php:43
+msgid "affiliateUrl"
+msgstr ""
+
+#: tests/trans.php:44
+msgid "url"
+msgstr ""
+
+#: tests/trans.php:45
+msgid "affiliateRate"
+msgstr ""
+
+#: includes/RakutenItensTab.php:5
+msgid "Pesquisa de produtos"
+msgstr "商品検索"
+
+#: includes/RakutenSettingOption.php:15
+#: includes/RakutenSettingOption.php:16
 msgid "Rakuten product"
 msgstr "楽天商品"
 
-#: tpls/media_tab_content.php:91
+#: includes/RakutenSettingOption.php:34
+msgid "Configuracao"
+msgstr "設定"
+
+#: includes/RakutenSettingOption.php:35
+msgid "Rakuten affiliate id"
+msgstr "楽天のアフィリエイトID"
+
+#: includes/RakutenSettingOption.php:40
+msgid "Rakuten api settings"
+msgstr "楽天APIの設定"
+
+#: includes/RakutenSettingOption.php:56
+msgid "Se tiver o affiliate id do Rakuten digite porfavor."
+msgstr "もし楽天のアフィリエイトIDがあれば、記入してください。"
+
+#: includes/RakutenSettingOption.php:57
+#, php-format
+msgid "Mais detalhes %s"
+msgstr "詳細 %s"
+
+#: includes/RakutenMediaTab.php:43
+#, php-format
+msgid "Rakuten %s"
+msgstr "楽天 %s"
+
+#: includes/RakutenMediaTab.php:45
+#: includes/MediaRakutenSearch.php:18
+msgid "Rakuten"
+msgstr "楽天"
+
+#: includes/RakutenBooksTab.php:6
+msgid "Pesquisa de livros"
+msgstr "書籍検索"
+
+#: tpls/rakuten_books_search.php:4
+#: tpls/media_tab_content.php:285
+msgid "Nome do livro"
+msgstr "書籍名"
+
+#: tpls/rakuten_books_search.php:7
+#: tpls/media_tab_content.php:288
+msgid "Autor"
+msgstr "著者名"
+
+#: tpls/rakuten_books_search.php:11
+#: tpls/media_tab_content.php:292
+msgid "Editora"
+msgstr "出版社"
+
+#: tpls/rakuten_books_search.php:13
+#: tpls/media_tab_content.php:294
+msgid "ISBN"
+msgstr "ISBNコード"
+
+#: tpls/rakuten_books_search.php:17
+#: tpls/rakuten_item_search.php:15
+#: tpls/media_tab_content.php:244
+#: tpls/media_tab_content.php:298
+msgid "Ordem"
+msgstr "ソート"
+
+#: tpls/rakuten_books_search.php:20
+#: tpls/media_tab_content.php:301
+msgid "Padrao"
+msgstr "標準"
+
+#: tpls/rakuten_books_search.php:23
+#: tpls/media_tab_content.php:304
+msgid "Mais vendido"
+msgstr "売れている順"
+
+#: tpls/rakuten_books_search.php:26
+#: tpls/media_tab_content.php:307
+msgid "Data de lancamento (Antigo)"
+msgstr "発売日(古い)"
+
+#: tpls/rakuten_books_search.php:29
+#: tpls/media_tab_content.php:310
+msgid "Data de lancamento (Novo)"
+msgstr "発売日(新しい)"
+
+#: tpls/rakuten_books_search.php:32
+#: tpls/media_tab_content.php:313
+msgid "Mais barato"
+msgstr "値段安い順"
+
+#: tpls/rakuten_books_search.php:35
+#: tpls/media_tab_content.php:316
+msgid "Mais caro"
+msgstr "値段が高い順"
+
+#: tpls/rakuten_books_search.php:38
+#: tpls/media_tab_content.php:319
+msgid "Mais comentarios"
+msgstr "レビュー順"
+
+#: tpls/rakuten_books_search.php:41
+#: tpls/media_tab_content.php:322
+msgid "Mais comentarios (media)"
+msgstr "レビュー平均順"
+
+#: tpls/rakuten_books_search.php:49
+#: tpls/media_tab_content.php:330
+#: tpls/tab_template.php:70
+msgid "Pesquisar"
+msgstr "検索"
+
+#: tpls/rakuten_books_search.php:51
+#: tpls/media_tab_content.php:332
+#: tpls/tab_template.php:72
+msgid "Pesquisando...."
+msgstr "検索中"
+
+#: tpls/rakuten_item_search.php:9
+#: tpls/media_tab_content.php:238
+msgid "Palavra chave"
+msgstr "検索キーワード"
+
+#: tpls/rakuten_item_search.php:19
+#: tpls/media_tab_content.php:247
+msgid "Taxas de afiliados (ascendente)"
+msgstr "アフィリエイト料率順（昇順）"
+
+#: tpls/rakuten_item_search.php:22
+#: tpls/media_tab_content.php:250
+msgid "Taxas de afiliados (decrescente)"
+msgstr "アフィリエイト料率順（降順）"
+
+#: tpls/rakuten_item_search.php:25
+#: tpls/media_tab_content.php:253
+msgid "Comentarios (ascendente)"
+msgstr "レビュー件数順（昇順）"
+
+#: tpls/rakuten_item_search.php:28
+#: tpls/media_tab_content.php:256
+msgid "Comentarios (decrescente)"
+msgstr "レビュー件数順（降順）"
+
+#: tpls/rakuten_item_search.php:31
+#: tpls/media_tab_content.php:259
+msgid "Media de comentarios (ascendente)"
+msgstr "レビュー平均順（昇順）"
+
+#: tpls/rakuten_item_search.php:34
+#: tpls/media_tab_content.php:262
+msgid "Media de comentarios (decrescente)"
+msgstr "レビュー平均順（降順）"
+
+#: tpls/rakuten_item_search.php:37
+#: tpls/media_tab_content.php:265
+msgid "Preco (ascendente)"
+msgstr "価格順（昇順）"
+
+#: tpls/rakuten_item_search.php:40
+#: tpls/media_tab_content.php:268
+msgid "Preco (decrescente)"
+msgstr "価格順（降順）"
+
+#: tpls/rakuten_item_search.php:43
+#: tpls/media_tab_content.php:271
+msgid "Data de atualizacao (ascendente)"
+msgstr "商品更新日時順（昇順）"
+
+#: tpls/rakuten_item_search.php:46
+#: tpls/media_tab_content.php:274
+msgid "Data de atualizacao (decrescente)"
+msgstr "商品更新日時順（降順）"
+
+#: tpls/rakuten_item_search.php:49
+#: tpls/media_tab_content.php:277
+msgid "Padrao do Rakuten"
+msgstr "楽天標準ソート順"
+
+#: tpls/media_tab_content.php:65
+msgid "Nao foi encontrado nenhum produto"
+msgstr "商品が一個も見つかりませんでした。"
+
+#: tpls/media_tab_content.php:98
 #, php-format
 msgid "Encontrados %d produto(s)."
 msgstr "%d 個の商品が見つかりました。"
 
-#: tpls/media_tab_content.php:108
-#: tpls/media_tab_content.php:141
+#: tpls/media_tab_content.php:114
+#: tpls/media_tab_content.php:147
 msgid "Inserir"
 msgstr "追加"
 
-#: tpls/media_tab_content.php:110
-#: tpls/media_tab_content.php:143
+#: tpls/media_tab_content.php:116
+#: tpls/media_tab_content.php:149
 msgid "Inserir o codigo"
 msgstr "コードの追加"
 
-#: tpls/media_tab_content.php:216
+#: tpls/media_tab_content.php:228
 msgid "Pesquisar livros"
 msgstr "書籍検索"
 
-#: tpls/media_tab_content.php:218
+#: tpls/media_tab_content.php:231
 msgid "Pesquisar itens"
 msgstr "商品検索"
 
-#: tpls/media_tab_content.php:224
-msgid "Palavra chave"
-msgstr "検索キーワード"
+#: tpls/options_page.php:23
+msgid "Options saved."
+msgstr "保存されました。"
 
-#: tpls/media_tab_content.php:231
-#: tpls/media_tab_content.php:263
-msgid "Ordem"
-msgstr "ソート"
+#: tpls/options_page.php:33
+msgid "Menu Test Plugin Options"
+msgstr ""
 
-#: tpls/media_tab_content.php:233
-msgid "Taxas de afiliados (ascendente)"
-msgstr "アフィリエイト料率順（昇順）"
+#: tpls/options_page.php:44
+msgid "Rakuten affiliate ID:"
+msgstr "楽天のアフィリエイトID"
 
-#: tpls/media_tab_content.php:234
-msgid "Taxas de afiliados (decrescente)"
-msgstr "アフィリエイト料率順（降順）"
+#: tpls/options_page.php:51
+msgid "Exemplo"
+msgstr "サンプル"
 
-#: tpls/media_tab_content.php:235
-msgid "Comentarios (ascendente)"
-msgstr "レビュー件数順（昇順）"
+#: tpls/options_page.php:62
+msgid "Update Options"
+msgstr "オプション更新"
 
-#: tpls/media_tab_content.php:236
-msgid "Comentarios (decrescente)"
-msgstr "レビュー件数順（降順）"
-
-#: tpls/media_tab_content.php:237
-msgid "Media de comentarios (ascendente)"
-msgstr "レビュー平均順（昇順）"
-
-#: tpls/media_tab_content.php:238
-msgid "Media de comentarios (decrescente)"
-msgstr "レビュー平均順（降順）"
-
-#: tpls/media_tab_content.php:239
-msgid "Preco (ascendente)"
-msgstr "価格順（昇順）"
-
-#: tpls/media_tab_content.php:240
-msgid "Preco (decrescente)"
-msgstr "価格順（降順）"
-
-#: tpls/media_tab_content.php:241
-msgid "Data de atualizacao (ascendente)"
-msgstr "商品更新日時順（昇順）"
-
-#: tpls/media_tab_content.php:242
-msgid "Data de atualizacao (decrescente)"
-msgstr "商品更新日時順（降順）"
-
-#: tpls/media_tab_content.php:243
-msgid "Padrao do Rakuten"
-msgstr "楽天標準ソート順"
-
-#: tpls/media_tab_content.php:250
-msgid "Nome do livro"
-msgstr "書籍名"
-
-#: tpls/media_tab_content.php:253
-msgid "Autor"
-msgstr "著者名"
-
-#: tpls/media_tab_content.php:257
-msgid "Editora"
-msgstr "出版社"
-
-#: tpls/media_tab_content.php:259
-msgid "ISBN"
-msgstr "ISBNコード"
-
-#: tpls/media_tab_content.php:265
-msgid "Padrao"
-msgstr "標準"
-
-#: tpls/media_tab_content.php:266
-msgid "Mais vendido"
-msgstr "売れている順"
-
-#: tpls/media_tab_content.php:267
-msgid "Data de lancamento (Antigo)"
-msgstr "発売日(古い)"
-
-#: tpls/media_tab_content.php:268
-msgid "Data de lancamento (Novo)"
-msgstr "発売日(新しい)"
-
-#: tpls/media_tab_content.php:269
-msgid "Mais barato"
-msgstr "値段安い順"
-
-#: tpls/media_tab_content.php:270
-msgid "Mais caro"
-msgstr "値段が高い順"
-
-#: tpls/media_tab_content.php:271
-msgid "Mais comentarios"
-msgstr "レビュー順"
-
-#: tpls/media_tab_content.php:272
-msgid "Mais comentarios (media)"
-msgstr "レビュー平均順"
-
-#: tpls/media_tab_content.php:278
-msgid "Pesquisar"
-msgstr "検索"
-
-#: tpls/media_tab_content.php:279
-msgid "Pesquisando...."
-msgstr "検索中"
+#: tpls/tab_template.php:42
+#: tpls/tab_template.php:50
+msgid "_"
+msgstr ""
 

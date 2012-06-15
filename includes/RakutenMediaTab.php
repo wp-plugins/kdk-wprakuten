@@ -41,7 +41,7 @@ class RakutenMediaTab {
 	//投稿にメディアボタンを追加
 	function media_button ($editor_id = 'content') {
 		$context = apply_filters('media_buttons_context_rakuten', __('Rakuten %s'));
-		$img = '<img src="' . esc_url( admin_url( 'images/media-button.png?ver=20111005' ) ) . '" width="15" height="15" />';
+		$img = '<img src="' . esc_url( plugins_url() . "/". KDK_WP_RAKUTEN_NAME . '/images/r_icon.png' ) . '" width="15" height="15" />';
 		echo '<a href="' . $this->get_upload_iframe_src('kdk-wprakuten-itens') . '" class="thickbox" id="' . esc_attr( $editor_id ) . '-add_media-rakuten" title="' . esc_attr__( 'Rakuten' ) . '" onclick="return false;">' . sprintf( $context, $img ) . '</a>';
 	}
 
