@@ -169,7 +169,7 @@ class RakutenMediaTab {
 					$class = " class='current'";
 
 				$href = add_query_arg(array('tab' => $tab->__toString()));
-				$link = "<a href='" . esc_url($href) . "'$class>".$tab->getName()."</a>";
+				$link = "<a href='" . esc_url($href) . "'$class>".esc_attr__($tab->getName(),'kdk-wprakuten')."</a>";
 				echo "\t<li id='" . esc_attr("tab-$tab") . "'>$link</li>\n";
 			}
 			echo "</ul>\n";

@@ -1,6 +1,6 @@
 <form method="GET" action="#" id="itemSearchForm">
 	<h3>
-		<?php echo $tab->getName()?>
+		<?php esc_html_e($tab->getName(),'kdk-wprakuten')?>
 	</h3>
 	<table style="width:100%">
 		<tr>

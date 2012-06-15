@@ -3,7 +3,7 @@ Contributors: johna1203
 Tags: shortcode, rakuten, kodokuman,楽天
 Requires at least: 3.1
 Tested up to: 3.4
-Stable tag: 0.3.2
+Stable tag: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,18 @@ Search Rakuten product and add shortcodes!
 
 == Description ==
 現在はショートコードを利用して、楽天の市場の商品、楽天ブックスを投稿に表示させる事ができます。
+前回と比べてかなりよくなりました、自分のアフィリエイトID追加ができるし！
+
+後、いろんな工夫もしています！
+AJAXを利用して、楽天にリクエストしているからプラグインのせいで
+ページの表示が遅くなる事はないです。
+
+今は商品検索と書籍検索だが、他のサービス対応する為に開発が進められています。
+
+完全に生まれ変わった、Rakuten productを是非試してみて下さい！
+
 バグがあれば、教えて下さい Twitter : @johna1203
+
 
 == Screenshots ==
 
@@ -33,11 +44,7 @@ Search Rakuten product and add shortcodes!
 
 == Changelog ==
 
-= 0.3 =
-* ポルトガル語にサポート
-* Suporte em Português
-
-= 0.3.2 =
-* 商品が見つからなかった時にエラーを出すようした。
-* 楽天から返ったきたエラーを表示するようにした。
-* 検索ボタンがきいてなかったので、それを直した。
+= 0.4 =
+* 検索オプションが増えた。
+* 専用タブになった。
+* パフォーマンスの強化

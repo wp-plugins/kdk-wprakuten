@@ -20,7 +20,7 @@ if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' )
 	?>
 <div class="updated">
 	<p>
-		<strong><?php _e('Options saved.'); ?> </strong>
+		<strong><?php _e('Options saved.', 'kdk-wprakuten' ); ?> </strong>
 	</p>
 
 	<?php
@@ -30,7 +30,7 @@ if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' )
 
 echo '<div class="wrap">';
 
-echo "<h2>" . __( 'Menu Test Plugin Options' ) . "</h2>";
+echo "<h2>" . __( 'Rakuten product options', 'kdk-wprakuten' ) . "</h2>";
 
 
 wp_enqueue_style( 'rakuten_product_template' );
@@ -41,14 +41,14 @@ wp_enqueue_style( 'rakuten_product_template' );
 			value="Y">
 
 		<p>
-			<?php _e("Rakuten affiliate ID:"); ?>
+			<?php _e("Rakuten affiliate ID:", 'kdk-wprakuten' ); ?>
 			<input type="text" name="rakuten_product_options[RakutenAffiliateId]"
 				value="<?php echo esc_attr($opt_val["RakutenAffiliateId"]); ?>"
 				size="50">
 		</p>
 		<div>
 			<p>
-				<?php _e("Exemplo"); ?>
+				<?php _e("Exemplo", 'kdk-wprakuten' ); ?>
 			</p>
 
 			<div id="rakuten_product_template1">
@@ -59,7 +59,7 @@ wp_enqueue_style( 'rakuten_product_template' );
 
 		<p class="submit">
 			<input type="submit" name="Submit"
-				value="<?php _e('Update Options') ?>" />
+				value="<?php _e('Update Options', 'kdk-wprakuten' ) ?>" />
 		</p>
 
 	</form>
