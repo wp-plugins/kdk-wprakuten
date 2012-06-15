@@ -22,6 +22,7 @@ AJAXを利用して、楽天にリクエストしているからプラグイン�
 完全に生まれ変わった、Rakuten productを是非試してみて下さい！
 
 バグがあれば、教えて下さい Twitter : @johna1203
+もしくは、サーポートページまでお問い合わせください、http://blog.kodokuman.com/kdk-wprakuten-support/
 
 
 == Screenshots ==
