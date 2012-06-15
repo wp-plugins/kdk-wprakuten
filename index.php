@@ -28,7 +28,7 @@ load_plugin_textdomain( 'kdk-wprakuten-books', false, "kdk-wprakuten/languages/"
 load_plugin_textdomain( 'kdk-wprakuten-itens', false, "kdk-wprakuten/languages/" );
 
 //古いコードを吸収するため
-add_action('init', 'RakutenShortTag::register_rakuten_shorttag');
+//add_action('init', 'RakutenShortTag::register_rakuten_shorttag');
 //add_filter('media_upload_tabs', 'MediaRakutenSearch::add_media_tab');
 
 //オプション設定

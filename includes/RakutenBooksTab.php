@@ -3,7 +3,7 @@ class RakutenBooksTab implements IRakutenMediaTab {
 
 	function getName()
 	{
-		return __('Pesquisa de livros');
+		return 'Pesquisa de livros';
 	}
 
 	public function getFields()
@@ -16,7 +16,7 @@ class RakutenBooksTab implements IRakutenMediaTab {
 				'__hits'=> 30,
 				'__page' => 1,
 				'__availability' => array(0,1),
-				'outOfStockFlag' => array(1,0),
+				'__outOfStockFlag' => array(1,0),
 				'chirayomiFlag' => array(0,1),
 				'sort'=>array(
 						'standard',

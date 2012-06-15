@@ -1,7 +1,7 @@
 
 <form method="GET" action="#" id="itemSearchForm">
 	<h3>
-		<?php esc_html_e($tab->getName(),'kdk-wprakuten')?>
+		<?php esc_html_e($tab->getName(),$tab->__toString())?>
 	</h3>
 	<div id="message" class="error"></div>
 	<table style="width: 100%">
@@ -68,7 +68,9 @@
 		<input type="submit" name="shopping_url_button"
 			id="shopping_url_button"
 			value="<?php esc_attr_e('Pesquisar','kdk-wprakuten')?>" />
-		<div id="rakuten_loading"><?php _e('Pesquisando....','kdk-wprakuten')?></div>
+		<div id="rakuten_loading">
+			<?php _e('Pesquisando....','kdk-wprakuten')?>
+		</div>
 		<div id="loading_text">
 			<?php _e('Pesquisando....','kdk-wprakuten')?>
 		</div>

@@ -49,3 +49,14 @@ __('size_8','books');
 __('size_9','books');
 __('size_10','books');
 
+__('sort','kdk-wprakuten-cd');
+__('sort_standard','kdk-wprakuten-cd');
+__('sort_sales','kdk-wprakuten-cd');
+__('sort_+releaseDate');
+__('sort_-releaseDate');
+__('sort_+itemPrice');
+__('sort_-itemPrice');
+__('sort_reviewCount','kdk-wprakuten-cd');
+__('sort_reviewAverage','kdk-wprakuten-cd');
+__('limitedFlag','kdk-wprakuten-cd');
+__('Pesquisa de livros');

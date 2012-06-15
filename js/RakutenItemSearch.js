@@ -34,37 +34,36 @@
 				delete param[i];
 			}
 		}
-		// param = $.extend({}, param, new_param);
-		_do_request(param, opts);
+		if (!is_request) {
+			is_request = true;
+			_do_request(param, opts);
+		}
 	}
 
 	function _do_request(param, opts) {
-		if (!is_request) {
-			$('#rakuten_loading').show();
-			is_request = true;
-			$.ajax({
-				url : opts.request_url,
-				data : param,
-				dataType : 'jsonp',
-				jsonp : 'callBack',
-				success : function(data, status) {
-					$('#rakuten_loading').hide();
-					is_request = false;
-					if (status == "success") {
-						var header_check = checkHeader(data);
-						if (header_check === true) {
-							if (opts.callBack) {
-								opts.callBack(data, param, opts);
-							}
-						} else if (header_check == 'notfound') {
-							$('#pager').html('NotFound');
-						} else {
-							$('#message').html(data.Header.StatusMsg).show();
+		$('#rakuten_loading').show();
+		$.ajax({
+			url : opts.request_url,
+			data : param,
+			dataType : 'jsonp',
+			jsonp : 'callBack',
+			success : function(data, status) {
+				$('#rakuten_loading').hide();
+				is_request = false;
+				if (status == "success") {
+					var header_check = checkHeader(data);
+					if (header_check === true) {
+						if (opts.callBack) {
+							opts.callBack(data, param, opts);
 						}
+					} else if (header_check == 'notfound') {
+						$('#pager').html('NotFound');
+					} else {
+						$('#message').html(data.Header.StatusMsg).show();
 					}
 				}
-			});
-		}
+			}
+		});
 	}
 
 	function checkHeader(data) {

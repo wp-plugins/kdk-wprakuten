@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdk-wprakuten\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-16 02:10+0900\n"
+"POT-Creation-Date: 2012-06-15 20:49-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Johnathan David <johnathan@kodokuman.com>\n"
 "Language-Team: \n"
@@ -573,6 +573,10 @@ msgstr "クレジットカード利用可能な商品のみ"
 #: tests/itens/trans.php:155
 msgid "creditCardFlag_1"
 msgstr "クレジットカード利用可能な商品のみ"
+
+#: tests/itens/trans.php:158
+msgid "Pesquisa de produtos"
+msgstr "商品検索"
 
 #, fuzzy
 #~ msgid "__pointRate_0"

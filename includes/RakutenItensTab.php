@@ -2,7 +2,7 @@
 class RakutenItensTab implements IRakutenMediaTab {
 	function getName()
 	{
-		return __('Pesquisa de produtos');
+		return 'Pesquisa de produtos';
 	}
 
 	public function getFields() {

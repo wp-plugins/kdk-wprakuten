@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdk-wprakuten\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-16 01:35+0900\n"
+"POT-Creation-Date: 2012-06-15 20:47-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Johnathan David <johnathan@kodokuman.com>\n"
 "Language-Team: \n"
@@ -197,6 +197,50 @@ msgstr "コミック"
 msgid "size_10"
 msgstr "ムックその他"
 
+#: tests/books/trans.php:52
+msgid "sort"
+msgstr "ソート"
+
+#: tests/books/trans.php:53
+msgid "sort_standard"
+msgstr "標準"
+
+#: tests/books/trans.php:54
+msgid "sort_sales"
+msgstr "売れている"
+
+#: tests/books/trans.php:55
+msgid "sort_+releaseDate"
+msgstr "発売日(古い)"
+
+#: tests/books/trans.php:56
+msgid "sort_-releaseDate"
+msgstr "発売日(新しい)"
+
+#: tests/books/trans.php:57
+msgid "sort_+itemPrice"
+msgstr "価格が安い"
+
+#: tests/books/trans.php:58
+msgid "sort_-itemPrice"
+msgstr "価格が高い"
+
+#: tests/books/trans.php:59
+msgid "sort_reviewCount"
+msgstr "レビューの件数が多い"
+
+#: tests/books/trans.php:60
+msgid "sort_reviewAverage"
+msgstr "レビューの評価(平均)が高い"
+
+#: tests/books/trans.php:61
+msgid "limitedFlag"
+msgstr "限定フラグ"
+
+#: tests/books/trans.php:62
+msgid "Pesquisa de livros"
+msgstr "本検索"
+
 #~ msgid "__developerId"
 #~ msgstr "デベロッパID"
 
@@ -214,9 +258,6 @@ msgstr "ムックその他"
 
 #~ msgid "__page"
 #~ msgstr "取得ページ"
-
-#~ msgid "sort"
-#~ msgstr "ソート"
 
 #~ msgid "keyword"
 #~ msgstr "検索キーワード"
