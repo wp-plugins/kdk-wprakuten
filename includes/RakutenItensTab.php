@@ -108,11 +108,38 @@ class RakutenItensTab implements IRakutenMediaTab {
 
 	public function doShortcode($raw_args, $content=null)
 	{
-		print_r($raw_args);
+		wp_enqueue_script( 'jquery' );
+		$template = apply_filters("rakuten_template","template1");
+		$codeName = $this->shortCodeName();
+
+		$defaults = array (
+				'id' => '',
+		);
+		$spanitized_args = shortcode_atts($defaults, $raw_args);
+
+		if (empty($spanitized_args['id']))
+			return '';
+
+		$display_fields = $this->displayFields();
+
+		$metadata[$display_fields['id']] = $spanitized_args['id'];
+		$metadata['operation'] = 'ItemCodeSearch';
+		$metadata['version'] = '2010-08-05';
+		$metadata['developerId'] = apply_filters('rakuten_str_replace','%%%RAKUTEN%%%DEV_ID%%%');
+		$metadata['affiliateId'] = apply_filters('rakuten_str_replace','%%%RAKUTEN%%%AFF_ID%%%');
+
+		$get_data['rakuten_title'] = $display_fields['title'];
+		$get_data['rakuten_price'] = $display_fields['price'];
+		$get_data['rakuten_description'] = $display_fields['description'];
+		$get_data['rakuten_url'] = $display_fields['affiliateUrl'];
+		$get_data['rakuten_photo'] = $display_fields['imageUrl'];
+		$json = json_encode(array('param'=>$metadata,'display'=>$get_data));
+		$template = str_replace("[+rakuten_jsondata+]", $json, $template);
+		return $template;
 	}
 
 	public function __toString()
 	{
-		return "default";
+		return "kdk-wprakuten-itens";
 	}
 }

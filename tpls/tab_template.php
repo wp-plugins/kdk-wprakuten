@@ -2,7 +2,7 @@
 	<h3>
 		<?php echo $tab->getName()?>
 	</h3>
-	<table>
+	<table style="width:100%">
 		<tr>
 			<?php
 			$lines = 1;
@@ -22,12 +22,12 @@
 				continue;
 			}
 			?>
-			<td><label for="label_<?php echo esc_attr($k)?>"><?php esc_html_e($k)?>
+			<td><label for="label_<?php echo esc_attr($k)?>"><?php esc_html_e($k,$tab->__toString())?>
 			</label></td>
 
 			<?php if (!is_array($value)) :?>
 
-			<td><input id="label_<?php echo esc_attr($k)?>" type="text"
+			<td><input id="label_<?php echo esc_attr_e($k,$tab->__toString())?>" type="text"
 				name="<?php echo ereg_replace('^_+', "",esc_attr($k))?>"
 				value="<?php echo esc_attr($value) ?>" /></td>
 
@@ -39,13 +39,18 @@
 					<?php foreach ($value as $option) :?>
 					<option value="<?php echo esc_attr($option)?>">
 
-						<?php esc_html_e($option)?>
+						<?php esc_html_e($k . '_' . $option,$tab->__toString())?>
 
 					</option>
 					<?php endforeach;?>
-			</select> <?php else :?> <?php foreach ($value as $option) :?> <label><?php esc_html_e($option)?>
-					<input type="radio" name="<?php echo esc_attr($k)?>"
-					value="<?php echo esc_attr($option)?>" /> </label> <?php endforeach;?>
+				</select>
+			<?php else :?>
+					<?php foreach ($value as $option) :?>
+					<label>
+						<input type="radio" name="<?php echo esc_attr($k)?>" value="<?php echo esc_attr($option)?>" /><?php esc_html_e($k . '_' . $option,$tab->__toString())?>
+					</label><br />
+
+					<?php endforeach;?>
 				<?php endif;?></td>
 			<?php endif?>
 

@@ -7,6 +7,9 @@ class RakutenMediaTab {
 	const REPLACE_DEVID = "%%%RAKUTEN%%%DEV_ID%%%";
 	const REPLACE_AFLID = "%%%RAKUTEN%%%AFF_ID%%%";
 
+	const KDK_DEFAULT_DID = "feaeec38b8bc37411b14de274b1d9480";
+	const KDK_DEFAULT_AID = "0a30aaaf.afb9b1e2.0a30aab0.82880378";
+
 	private static $singleton = null;
 
 	private $tabInterfaces = array();
@@ -15,11 +18,11 @@ class RakutenMediaTab {
 		//アップロード/挿入の隣にボタンを追加
 		add_action( 'media_buttons', array(&$this,'media_button'), 100);
 
-		$css =  plugins_url(KDK_WP_RAKUTEN_NAME . "/css/media_rakuten.css");
-		wp_register_style( 'media_rakute', $css );
-		$js_path = plugins_url() . "/" .KDK_WP_RAKUTEN_NAME . "/js/";
-		wp_register_script( 'rakuten-base-api', $js_path . 'RakutenItemSearch.js');
-		wp_register_script( 'rakuten-paging', $js_path . 'paging.js');
+		//タグのテンプレートを表示する為のアクション
+		add_filter( 'rakuten_template', array(&$this,'getTemplate'));
+
+		//文字列変換フィルター
+		add_filter("rakuten_str_replace", array(&$this,'replaceStr'));
 
 		//古いショートコードはこのクラスで吸収
 		add_shortcode('rakuten', array(&$this,'doShortcode'));
@@ -39,11 +42,11 @@ class RakutenMediaTab {
 	function media_button ($editor_id = 'content') {
 		$context = apply_filters('media_buttons_context_rakuten', __('Rakuten %s'));
 		$img = '<img src="' . esc_url( admin_url( 'images/media-button.png?ver=20111005' ) ) . '" width="15" height="15" />';
-		echo '<a href="' . $this->get_upload_iframe_src('default') . '" class="thickbox" id="' . esc_attr( $editor_id ) . '-add_media-rakuten" title="' . esc_attr__( 'Rakuten' ) . '" onclick="return false;">' . sprintf( $context, $img ) . '</a>';
+		echo '<a href="' . $this->get_upload_iframe_src('kdk-wprakuten-itens') . '" class="thickbox" id="' . esc_attr( $editor_id ) . '-add_media-rakuten" title="' . esc_attr__( 'Rakuten' ) . '" onclick="return false;">' . sprintf( $context, $img ) . '</a>';
 	}
 
 	//メディアボタンのリンク作成
-	function get_upload_iframe_src( $type = null ) {
+	function get_upload_iframe_src( $type = 'kdk-wprakuten-itens' ) {
 		global $post_ID;
 		$url = plugins_url() . "/". KDK_WP_RAKUTEN_NAME . "/rakuten-media.php";
 		$uploading_iframe_ID = (int) $post_ID;
@@ -54,7 +57,7 @@ class RakutenMediaTab {
 	}
 
 	//タブのアクションを実装
-	function do_action ($type = "default")
+	function do_action ($type = "kdk-wprakuten-itens")
 	{
 		foreach ($this->tabInterfaces as $tab) {
 			if ($tab == $type) {
@@ -70,7 +73,7 @@ class RakutenMediaTab {
 		$interfaces = array();
 		$i=1;
 		foreach ($this->tabInterfaces as $v) {
-			if ($v=="default") {
+			if ($v=="kdk-wprakuten-itens") {
 				$interfaces[0] = $v;
 			} else {
 				$interfaces[$i] = $v;
@@ -223,6 +226,29 @@ class RakutenMediaTab {
 
 		$data['itemcode'] = json_encode($param);
 		return '<div class="kdk_rakuten" style="display:none;">' . json_encode($param) . '</div>';
+	}
+
+	//テンプレートの取得
+	function getTemplate ($type) {
+		wp_enqueue_style( 'rakuten_product_template',100 );
+		wp_enqueue_script("rakuten-templates");
+		$template = "";
+		switch ($type)
+		{
+			default:
+				$template = file_get_contents(dirname(dirname(__FILE__)) . "/tpls/template1_tag.html");
+		}
+		return $template;
+	}
+
+	function replaceStr($str) {
+		if ($str === RakutenMediaTab::REPLACE_DEVID) {
+			return RakutenMediaTab::KDK_DEFAULT_DID;
+		}
+
+		if ($str === RakutenMediaTab::REPLACE_AFLID) {
+			return RakutenMediaTab::KDK_DEFAULT_AID;
+		}
 	}
 
 	//スタティックメソット

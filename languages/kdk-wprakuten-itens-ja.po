@@ -1,0 +1,630 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdk-wprakuten\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-16 02:10+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Johnathan David <johnathan@kodokuman.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;itens\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: ./tests/itens\n"
+
+#: tests/itens/trans.php:3
+msgid "keyword"
+msgstr "キーワード"
+
+#: tests/itens/trans.php:4
+msgid "__version"
+msgstr "バージョン"
+
+#: tests/itens/trans.php:5
+msgid "version"
+msgstr "バージョン"
+
+#: tests/itens/trans.php:6
+msgid "_shopCode"
+msgstr "ショップコード"
+
+#: tests/itens/trans.php:7
+msgid "__genreId"
+msgstr "ジャンルID"
+
+#: tests/itens/trans.php:8
+#: tests/itens/trans.php:86
+msgid "genreId"
+msgstr "ジャンルID"
+
+#: tests/itens/trans.php:9
+msgid "+affiliateRate"
+msgstr "アフィリエイト料率順（昇順）"
+
+#: tests/itens/trans.php:10
+msgid "-affiliateRate"
+msgstr "アフィリエイト料率順（降順）"
+
+#: tests/itens/trans.php:11
+msgid "+reviewCount"
+msgstr "レビュー件数順（昇順）"
+
+#: tests/itens/trans.php:12
+msgid "-reviewCount"
+msgstr "レビュー件数順（昇順）"
+
+#: tests/itens/trans.php:13
+msgid "+reviewAverage"
+msgstr "レビュー平均順（昇順）"
+
+#: tests/itens/trans.php:14
+msgid "-reviewAverage"
+msgstr "レビュー平均順（昇順）"
+
+#: tests/itens/trans.php:15
+msgid "+itemPrice"
+msgstr "価格順（昇順）"
+
+#: tests/itens/trans.php:16
+msgid "-itemPrice"
+msgstr "価格順（降順）"
+
+#: tests/itens/trans.php:17
+msgid "+updateTimestamp"
+msgstr "商品更新日時順（昇順）"
+
+#: tests/itens/trans.php:18
+msgid "-updateTimestamp"
+msgstr "商品更新日時順（降順）"
+
+#: tests/itens/trans.php:19
+msgid "standard"
+msgstr "楽天標準ソート順"
+
+#: tests/itens/trans.php:22
+msgid "sort_+affiliateRate"
+msgstr "アフィリエイト料率順（昇順）"
+
+#: tests/itens/trans.php:23
+msgid "sort_-affiliateRate"
+msgstr "アフィリエイト料率順（降順）"
+
+#: tests/itens/trans.php:24
+msgid "sort_+reviewCount"
+msgstr "レビュー件数順（昇順）"
+
+#: tests/itens/trans.php:25
+msgid "sort_-reviewCount"
+msgstr "レビュー件数順（昇順）"
+
+#: tests/itens/trans.php:26
+msgid "sort_+reviewAverage"
+msgstr "レビュー平均順（昇順）"
+
+#: tests/itens/trans.php:27
+msgid "sort_-reviewAverage"
+msgstr "レビュー平均順（昇順）"
+
+#: tests/itens/trans.php:28
+msgid "sort_+itemPrice"
+msgstr "価格順（昇順）"
+
+#: tests/itens/trans.php:29
+msgid "sort_-itemPrice"
+msgstr "価格順（降順）"
+
+#: tests/itens/trans.php:30
+msgid "sort_+updateTimestamp"
+msgstr "商品更新日時順（昇順）"
+
+#: tests/itens/trans.php:31
+msgid "sort_-updateTimestamp"
+msgstr "商品更新日時順（降順）"
+
+#: tests/itens/trans.php:32
+msgid "sort_standard"
+msgstr "楽天標準ソート順"
+
+#: tests/itens/trans.php:35
+msgid "__minPrice"
+msgstr "最小価格"
+
+#: tests/itens/trans.php:36
+msgid "minPrice"
+msgstr "最小価格"
+
+#: tests/itens/trans.php:37
+msgid "__maxPrice"
+msgstr "最大価格"
+
+#: tests/itens/trans.php:38
+msgid "maxPrice"
+msgstr "最大価格"
+
+#: tests/itens/trans.php:39
+msgid "__availability"
+msgstr "在庫状況"
+
+#: tests/itens/trans.php:40
+#: tests/itens/trans.php:71
+msgid "availability"
+msgstr "在庫状況"
+
+#: tests/itens/trans.php:41
+msgid "__field"
+msgstr "検索フィールド"
+
+#: tests/itens/trans.php:42
+msgid "field"
+msgstr "検索フィールド"
+
+#: tests/itens/trans.php:43
+msgid "__carrier"
+msgstr "キャリア"
+
+#: tests/itens/trans.php:44
+msgid "carrier"
+msgstr "キャリア"
+
+#: tests/itens/trans.php:45
+msgid "__imageFlag"
+msgstr "商品画像有無フラグ"
+
+#: tests/itens/trans.php:46
+msgid "imageFlag"
+msgstr "商品画像有無フラグ"
+
+#: tests/itens/trans.php:47
+msgid "__orFlag"
+msgstr "OR検索フラグ"
+
+#: tests/itens/trans.php:48
+msgid "orFlag"
+msgstr "OR検索フラグ"
+
+#: tests/itens/trans.php:49
+msgid "__NGKeyword"
+msgstr "除外キーワード"
+
+#: tests/itens/trans.php:50
+msgid "NGKeyword"
+msgstr "除外キーワード"
+
+#: tests/itens/trans.php:51
+msgid "__genreInformationFlag"
+msgstr "ジャンルごとの商品数取得"
+
+#: tests/itens/trans.php:52
+msgid "genreInformationFlag"
+msgstr "ジャンルごとの商品数取得"
+
+#: tests/itens/trans.php:53
+msgid "__purchaseType"
+msgstr "購入種別"
+
+#: tests/itens/trans.php:54
+msgid "purchaseType"
+msgstr "購入種別"
+
+#: tests/itens/trans.php:55
+msgid "__shipOverseasFlag"
+msgstr "海外配送フラグ"
+
+#: tests/itens/trans.php:56
+#: tests/itens/trans.php:76
+msgid "shipOverseasFlag"
+msgstr "海外配送フラグ"
+
+#: tests/itens/trans.php:57
+msgid "__shipOverseasArea"
+msgstr "海外配送対象地域"
+
+#: tests/itens/trans.php:58
+#: tests/itens/trans.php:77
+msgid "shipOverseasArea"
+msgstr "海外配送対象地域"
+
+#: tests/itens/trans.php:59
+msgid "__asurakuFlag"
+msgstr "あす楽フラグ"
+
+#: tests/itens/trans.php:60
+#: tests/itens/trans.php:78
+msgid "asurakuFlag"
+msgstr "あす楽フラグ"
+
+#: tests/itens/trans.php:61
+msgid "__asurakuArea"
+msgstr "あす楽配送対象地域"
+
+#: tests/itens/trans.php:62
+#: tests/itens/trans.php:79
+msgid "asurakuArea"
+msgstr "あす楽配送対象地域"
+
+#: tests/itens/trans.php:63
+msgid "__pointRateFlag"
+msgstr "ポイント倍付けフラグ"
+
+#: tests/itens/trans.php:64
+msgid "pointRateFlag"
+msgstr "ポイント倍付けフラグ"
+
+#: tests/itens/trans.php:65
+msgid "__pointRate"
+msgstr "商品別ポイント倍付け"
+
+#: tests/itens/trans.php:66
+#: tests/itens/trans.php:83
+msgid "pointRate"
+msgstr "商品別ポイント倍付け"
+
+#: tests/itens/trans.php:67
+msgid "__postageFlag"
+msgstr "送料フラグ"
+
+#: tests/itens/trans.php:68
+#: tests/itens/trans.php:73
+msgid "postageFlag"
+msgstr "送料フラグ"
+
+#: tests/itens/trans.php:69
+msgid "__creditCardFlag"
+msgstr "クレジットカード利用可能フラグ"
+
+#: tests/itens/trans.php:70
+#: tests/itens/trans.php:74
+msgid "creditCardFlag"
+msgstr "クレジットカード利用可能フラグ"
+
+#: tests/itens/trans.php:72
+msgid "taxFlag"
+msgstr "消費税フラグ"
+
+#: tests/itens/trans.php:75
+msgid "shopOfTheYearFlag"
+msgstr "ショップオブザイヤーフラグ"
+
+#: tests/itens/trans.php:80
+msgid "affiliateRate"
+msgstr "アフィリエイト利用利率"
+
+#: tests/itens/trans.php:81
+msgid "startTime"
+msgstr "販売開始時刻"
+
+#: tests/itens/trans.php:82
+msgid "endTime"
+msgstr "販売終了時刻"
+
+#: tests/itens/trans.php:84
+msgid "pointRateStartTime"
+msgstr "商品別ポイント倍付け開始日時"
+
+#: tests/itens/trans.php:85
+msgid "pointRateEndTime"
+msgstr "商品別ポイント倍付け終了日時"
+
+#: tests/itens/trans.php:89
+msgid "__availability_0"
+msgstr "販売不可能"
+
+#: tests/itens/trans.php:90
+msgid "__availability_1"
+msgstr "販売可能"
+
+#: tests/itens/trans.php:91
+msgid "availability_1"
+msgstr "販売可能"
+
+#: tests/itens/trans.php:92
+msgid "__field_0"
+msgstr "検索対象が広い"
+
+#: tests/itens/trans.php:93
+msgid "field_0"
+msgstr "検索対象が広い"
+
+#: tests/itens/trans.php:94
+msgid "__field_1"
+msgstr "検索対象範囲が限定される"
+
+#: tests/itens/trans.php:95
+msgid "field_1"
+msgstr "検索対象範囲が限定される"
+
+#: tests/itens/trans.php:96
+msgid "__carrier_0"
+msgstr "PC"
+
+#: tests/itens/trans.php:97
+msgid "carrier_0"
+msgstr "PC"
+
+#: tests/itens/trans.php:98
+msgid "__carrier_1"
+msgstr "モバイル"
+
+#: tests/itens/trans.php:99
+msgid "carrier_1"
+msgstr "モバイル"
+
+#: tests/itens/trans.php:100
+msgid "__imageFlag_0"
+msgstr "すべての商品を検索対象とする"
+
+#: tests/itens/trans.php:101
+msgid "imageFlag_0"
+msgstr "すべての商品を検索対象とする"
+
+#: tests/itens/trans.php:102
+msgid "__imageFlag_1"
+msgstr "商品画像ありの商品のみを検索対象とする"
+
+#: tests/itens/trans.php:103
+msgid "imageFlag_1"
+msgstr "商品画像ありの商品のみを検索対象とする"
+
+#: tests/itens/trans.php:104
+msgid "__orFlag_0"
+msgstr "AND検索"
+
+#: tests/itens/trans.php:105
+msgid "orFlag_0"
+msgstr "AND検索"
+
+#: tests/itens/trans.php:106
+msgid "__orFlag_1"
+msgstr "OR検索"
+
+#: tests/itens/trans.php:107
+msgid "orFlag_1"
+msgstr "OR検索"
+
+#: tests/itens/trans.php:108
+msgid "__genreInformationFlag_0"
+msgstr "ジャンルごとの商品数の情報を取得しない"
+
+#: tests/itens/trans.php:109
+msgid "genreInformationFlag_0"
+msgstr "ジャンルごとの商品数の情報を取得しない"
+
+#: tests/itens/trans.php:110
+msgid "__genreInformationFlag_1"
+msgstr "ジャンルごとの商品数の情報を取得する"
+
+#: tests/itens/trans.php:111
+msgid "genreInformationFlag_1"
+msgstr "ジャンルごとの商品数の情報を取得する"
+
+#: tests/itens/trans.php:112
+msgid "__purchaseType_0"
+msgstr "通常購入"
+
+#: tests/itens/trans.php:113
+msgid "purchaseType_0"
+msgstr "通常購入"
+
+#: tests/itens/trans.php:114
+msgid "__purchaseType_1"
+msgstr "定期購入"
+
+#: tests/itens/trans.php:115
+msgid "purchaseType_1"
+msgstr "定期購入"
+
+#: tests/itens/trans.php:116
+msgid "__purchaseType_2"
+msgstr "頒布会購入"
+
+#: tests/itens/trans.php:117
+msgid "purchaseType_2"
+msgstr "頒布会購入"
+
+#: tests/itens/trans.php:118
+msgid "__shipOverseasFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:119
+msgid "shipOverseasFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:120
+msgid "__shipOverseasFlag_1"
+msgstr "海外配送可能な商品のみ"
+
+#: tests/itens/trans.php:121
+msgid "shipOverseasFlag_1"
+msgstr "海外配送可能な商品のみ"
+
+#: tests/itens/trans.php:122
+msgid "__asurakuFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:123
+msgid "asurakuFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:124
+msgid "__asurakuFlag_1"
+msgstr "あす楽対応可能な商品のみ"
+
+#: tests/itens/trans.php:125
+msgid "asurakuFlag_1"
+msgstr "あす楽対応可能な商品のみ"
+
+#: tests/itens/trans.php:126
+msgid "__pointRateFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:127
+msgid "pointRateFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:128
+msgid "__pointRateFlag_1"
+msgstr "ポイント倍付け商品のみ"
+
+#: tests/itens/trans.php:129
+msgid "pointRateFlag_1"
+msgstr "ポイント倍付け商品のみ"
+
+#: tests/itens/trans.php:130
+msgid "__pointRate_2"
+msgstr "2倍"
+
+#: tests/itens/trans.php:131
+msgid "pointRate_2"
+msgstr "2倍"
+
+#: tests/itens/trans.php:132
+msgid "__pointRate_3"
+msgstr "3倍"
+
+#: tests/itens/trans.php:133
+msgid "pointRate_3"
+msgstr "3倍"
+
+#: tests/itens/trans.php:134
+msgid "__pointRate_4"
+msgstr "4倍"
+
+#: tests/itens/trans.php:135
+msgid "pointRate_4"
+msgstr "4倍"
+
+#: tests/itens/trans.php:136
+msgid "__pointRate_5"
+msgstr "5倍"
+
+#: tests/itens/trans.php:137
+msgid "pointRate_5"
+msgstr "5倍"
+
+#: tests/itens/trans.php:138
+msgid "__pointRate_6"
+msgstr "6倍"
+
+#: tests/itens/trans.php:139
+msgid "pointRate_6"
+msgstr "6倍"
+
+#: tests/itens/trans.php:140
+msgid "__pointRate_7"
+msgstr "7倍"
+
+#: tests/itens/trans.php:141
+msgid "pointRate_7"
+msgstr "7倍"
+
+#: tests/itens/trans.php:142
+msgid "__pointRate_8"
+msgstr "8倍"
+
+#: tests/itens/trans.php:143
+msgid "pointRate_8"
+msgstr "8倍"
+
+#: tests/itens/trans.php:144
+msgid "__pointRate_9"
+msgstr "9倍"
+
+#: tests/itens/trans.php:145
+msgid "pointRate_9"
+msgstr "9倍"
+
+#: tests/itens/trans.php:146
+msgid "__pointRate_10"
+msgstr "10倍"
+
+#: tests/itens/trans.php:147
+msgid "pointRate_10"
+msgstr "10倍"
+
+#: tests/itens/trans.php:148
+msgid "__postageFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:149
+msgid "postageFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:150
+msgid "__postageFlag_1"
+msgstr "送料込み／送料無料の商品のみ"
+
+#: tests/itens/trans.php:151
+msgid "postageFlag_1"
+msgstr "送料込み／送料無料の商品のみ"
+
+#: tests/itens/trans.php:152
+msgid "__creditCardFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:153
+msgid "creditCardFlag_0"
+msgstr "すべての商品"
+
+#: tests/itens/trans.php:154
+msgid "__creditCardFlag_1"
+msgstr "クレジットカード利用可能な商品のみ"
+
+#: tests/itens/trans.php:155
+msgid "creditCardFlag_1"
+msgstr "クレジットカード利用可能な商品のみ"
+
+#, fuzzy
+#~ msgid "__pointRate_0"
+#~ msgstr "商品別ポイント倍付け"
+
+#, fuzzy
+#~ msgid "pointRate_0"
+#~ msgstr "商品別ポイント倍付け"
+
+#, fuzzy
+#~ msgid "__pointRate_1"
+#~ msgstr "商品別ポイント倍付け"
+
+#, fuzzy
+#~ msgid "pointRate_1"
+#~ msgstr "商品別ポイント倍付け"
+
+#~ msgid "chirayomiFlag"
+#~ msgstr "チラよみ"
+
+#~ msgid "title"
+#~ msgstr "書籍タイトル"
+
+#~ msgid "author"
+#~ msgstr "著者名"
+
+#~ msgid "publisherName"
+#~ msgstr "出版社名"
+
+#~ msgid "size"
+#~ msgstr "書籍のサイズ"
+
+#~ msgid "isbn"
+#~ msgstr "ISBNコード(書籍コード)"
+
+#~ msgid "__developerId"
+#~ msgstr "デベロッパID"
+
+#~ msgid "__operation"
+#~ msgstr "操作"
+
+#~ msgid "__hits"
+#~ msgstr "1ページあたりの取得件数"
+
+#~ msgid "outOfStockFlag"
+#~ msgstr "品切れ等購入不可商品表示"
+
+#~ msgid "sort"
+#~ msgstr "ソート"
+
+#~ msgid "catchcopy"
+#~ msgstr "ISBNコード(書籍コード)"
+
+#~ msgid "other"
+#~ msgstr "その他"

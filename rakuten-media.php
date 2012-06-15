@@ -33,7 +33,7 @@ $post_id = isset($_REQUEST['post_id'])? (int) $_REQUEST['post_id'] : 0;
 if ( isset($_GET['tab']) )
 	$tab = strval($_GET['tab']);
 else
-	$tab = 'default';
+	$tab = 'kdk-wprakuten-itens';
 
 $rakutenMediaTab->do_action($tab);
 // if ( $tab == 'type' || $tab == 'type_url' || ! array_key_exists( $tab , $rakutenMediaTab->media_rakuten_tabs() ) ) {

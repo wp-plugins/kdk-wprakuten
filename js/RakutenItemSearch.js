@@ -50,7 +50,6 @@
 				if (status == "success") {
 					if (checkHeader(data) === true) {
 						if (opts.callBack) {
-							console.log("callback");
 							opts.callBack(data, param, opts);
 						}
 					}
@@ -76,24 +75,29 @@
 		var PageClick = function(pageclickednumber) {
 			requestData['page'] = pageclickednumber;
 			_do_request(requestData, opts);
-		}
+		};
 		$("#" + opts.pager).pager({
 			pagenumber : page,
 			pagecount : pageCount,
 			buttonClickCallback : PageClick
 		});
-	}
+	};
 
 	$.itemSearch.prepare = function(form, defaults) {
 		$.fn.itemSearch.defaults = defaults;
 		var opts = {};
 		opts.param = {};
 		$(form).itemSearch(opts);
-	}
+	};
+
+	$.itemSearch.do_serarchitem = function(option) {
+		var opts = $.extend({}, $.fn.itemSearch.defaults, option);
+		_do_request(opts.param, opts);
+	};
 
 	$.fn.itemSearch.defaults = {
 		'output_list' : 'itens',
-		'callback' : null,
+		'callBack' : null,
 		'pager' : 'pager',
 		'request_url' : 'http://api.rakuten.co.jp/rws/3.0/json',
 		param : {}

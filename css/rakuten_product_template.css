@@ -1,7 +1,13 @@
 @CHARSET "UTF-8";
 
-div.rakuten_product_main {
+div.rakuten_product_main  {
 	display: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.rakuten_product_main  a{
+	color:#333;
 }
 
 div.rakuten_product_main dl.rakuten_template1 {
@@ -24,11 +30,12 @@ div.rakuten_product_main dl.rakuten_template1 dt img.rakuten_photo {
 	background-position: left top;
 }
 
-div.rakuten_product_main dl.rakuten_template1 dt a:hover img.rakuten_photo {
+div.rakuten_product_main dl.rakuten_template1 dt a:hover img.rakuten_photo
+	{
 	background-image: url(../images/rakuten_product_template1_bg_hover.gif);
 }
 
-div.rakuten_product_main dl.rakuten_template1 dt p.title {
+div.rakuten_product_main dl.rakuten_template1 dt p.rakuten_title {
 	margin: 0 0 5px 0;
 }
 
