@@ -19,8 +19,6 @@
 		// var new_param = {};
 		if (fp.length > 0) {
 			for (i in fp) {
-				console.log("param name   :   " + fp[i].name + "   val   : "
-						+ param[fp[i].name]);
 				if (param[fp[i].name] !== undefined) {
 					// if (fp[i].value !== "") {
 					param[fp[i].name] = fp[i].value;
@@ -29,14 +27,13 @@
 				}
 			}
 		}
-		console.log(JSON.stringify(param, null, '\t'));
+
 		for (i in param) {
 			if (param[i] == "" || param[i] == null) {
 				delete param[i];
 			}
 		}
 		// param = $.extend({}, param, new_param);
-		console.log("request" + JSON.stringify(param, null, '\t'));
 		_do_request(param, opts);
 	}
 
@@ -87,6 +84,7 @@
 		$.fn.itemSearch.defaults = defaults;
 		var opts = {};
 		opts.param = {};
+
 		$(form).itemSearch(opts);
 	};
 

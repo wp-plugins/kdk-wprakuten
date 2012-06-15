@@ -2,7 +2,7 @@
 	<h3>
 		<?php esc_html_e($tab->getName(),'kdk-wprakuten')?>
 	</h3>
-	<table style="width:100%">
+	<table style="width: 100%">
 		<tr>
 			<?php
 			$lines = 1;
@@ -23,13 +23,15 @@
 			}
 			?>
 			<td><label for="label_<?php echo esc_attr($k)?>"><?php esc_html_e($k,$tab->__toString())?>
-			</label></td>
+			</label>
+			</td>
 
 			<?php if (!is_array($value)) :?>
 
-			<td><input id="label_<?php echo esc_attr_e($k,$tab->__toString())?>" type="text"
-				name="<?php echo ereg_replace('^_+', "",esc_attr($k))?>"
-				value="<?php echo esc_attr($value) ?>" /></td>
+			<td><input id="label_<?php echo esc_attr_e($k,$tab->__toString())?>"
+				type="text" name="<?php echo ereg_replace('^_+', "",esc_attr($k))?>"
+				value="<?php echo esc_attr($value) ?>" />
+			</td>
 
 			<?php else :?>
 
@@ -43,15 +45,12 @@
 
 					</option>
 					<?php endforeach;?>
-				</select>
-			<?php else :?>
-					<?php foreach ($value as $option) :?>
-					<label>
-						<input type="radio" name="<?php echo esc_attr($k)?>" value="<?php echo esc_attr($option)?>" /><?php esc_html_e($k . '_' . $option,$tab->__toString())?>
-					</label><br />
-
-					<?php endforeach;?>
-				<?php endif;?></td>
+			</select> <?php else :?> <?php foreach ($value as $option) :?> <label>
+					<input type="radio" name="<?php echo esc_attr($k)?>"
+					value="<?php echo esc_attr($option)?>" />
+				<?php esc_html_e($k . '_' . $option,$tab->__toString())?>
+			</label><br /> <?php endforeach;?> <?php endif;?>
+			</td>
 			<?php endif?>
 
 			<?php if ($lines % 2 == 0) :?>
@@ -115,18 +114,19 @@ jQuery(function ($) {
 					}
 				).appendTo($button_div).text("Add code");
 		});
-	}
+	};
 
 	var defaults = {
 			callBack: callback,
 			'pager' : 'pager',
 			'request_url' : 'http://api.rakuten.co.jp/rws/3.0/json',
 			param : {
-				<?php foreach ($fields as $k => $v) :?>
-					<?php echo ereg_replace('^_+', "", $k)?> : '<?php echo is_array($v) ? current($v) : $v?>',
-				<?php endforeach;?>
+				<?php $i=1;$count=count($fields);foreach ($fields as $k => $v) :?>
+					<?php echo ereg_replace('^_+', "", $k)?> : '<?php echo is_array($v) ? current($v) : $v?>'
+					<?php if ($i < $count) echo ',';?>
+				<?php $i++;endforeach;?>
 			}
-		}
+		};
 	$.itemSearch.prepare($('#itemSearchForm'),defaults);
 
 });

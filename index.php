@@ -3,7 +3,7 @@
  Plugin Name: Rakuten product
 Plugin URI: http://www.kodokuman.com/
 Description: Rakuten short tag plugin
-Version: 0.4.2.2
+Version: 0.4.2.3
 Author: Johnathan David
 Author URI: http://www.kodokuman.com/
 License: GPLv2 or later
