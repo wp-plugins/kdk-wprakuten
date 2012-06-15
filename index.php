@@ -3,7 +3,7 @@
  Plugin Name: Rakuten product
 Plugin URI: http://www.kodokuman.com/
 Description: Rakuten short tag plugin
-Version: 0.4.2.1
+Version: 0.4.2.3
 Author: Johnathan David
 Author URI: http://www.kodokuman.com/
 License: GPLv2 or later
@@ -26,8 +26,6 @@ define ('KDK_DEFAULT_DID', 'feaeec38b8bc37411b14de274b1d9480');
 load_plugin_textdomain( 'kdk-wprakuten', false, "kdk-wprakuten/languages/" );
 load_plugin_textdomain( 'kdk-wprakuten-books', false, "kdk-wprakuten/languages/" );
 load_plugin_textdomain( 'kdk-wprakuten-itens', false, "kdk-wprakuten/languages/" );
-
-echo __('availability_0','kdk-wprakuten-books');
 
 //古いコードを吸収するため
 add_action('init', 'RakutenShortTag::register_rakuten_shorttag');
